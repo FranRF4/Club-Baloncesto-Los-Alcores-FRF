@@ -15,12 +15,23 @@ INSERT INTO EQUIPO (nombre, categoria, escudo, nombre_campo, ubi_campo, color_lo
 
 
 -- Suponiendo que la temporada insertada tiene el ID 1
-INSERT INTO JORNADA (dia, mes, temporada) VALUES
-(20, 10, 1), -- Jornada 1
-(27, 10, 1), -- Jornada 2
-(10, 11, 1), -- Jornada 3
-(15, 11, 1), -- Jornada 4
-(24, 11, 1), -- Jornada 5
+INSERT INTO JORNADA (semana, mes, temporada) VALUES
+(3, 10, 1), -- Jornada 1
+(4, 10, 1), -- Jornada 2
+(2, 11, 1), -- Jornada 3
+(3, 11, 1), -- Jornada 4
+(4, 11, 1), -- Jornada 5
 (1, 12, 1),  -- Jornada 6
-(15, 12, 1), -- Jornada 7
-(22, 12, 1); -- Jornada 8
+(3, 12, 1), -- Jornada 7
+(4, 12, 1), -- Jornada 8
+(3, 1, 1), -- Jornada 9
+(4, 1, 1), -- Jornada 10
+(2, 1, 1), -- Jornada 11
+(3, 1, 1), -- Jornada 12
+(4, 1, 1), -- Jornada 13
+(1, 1, 1),  -- Jornada 14
+(3, 1, 1), -- Jornada 15
+(4, 1, 1), -- Jornada 16
+(3, 1, 1), -- Jornada 17
+(4, 1, 1); -- Jornada 18
+
