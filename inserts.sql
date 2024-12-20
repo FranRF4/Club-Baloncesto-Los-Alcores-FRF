@@ -1,4 +1,4 @@
-INSERT INTO TEMPORADAS (anio, categoria) VALUES (2024, '2ª Senior Provincial Masculina Sevilla');
+INSERT INTO TEMPORADA (anio, categoria) VALUES (2024, '2ª Senior Provincial Masculina Sevilla');
 
 
 INSERT INTO EQUIPO (nombre, categoria, escudo, nombre_campo, ubi_campo, color_local, color_visit) VALUES
@@ -15,29 +15,28 @@ INSERT INTO EQUIPO (nombre, categoria, escudo, nombre_campo, ubi_campo, color_lo
 
 
 
-INSERT INTO JORNADA (semana, mes, temporada) VALUES
-(3, 10, 1), -- Jornada 1
-(4, 10, 1), -- Jornada 2
-(2, 11, 1), -- Jornada 3
-(3, 11, 1), -- Jornada 4
-(4, 11, 1), -- Jornada 5
-(1, 12, 1),  -- Jornada 6
-(3, 12, 1), -- Jornada 7
-(4, 12, 1), -- Jornada 8
-(2, 1, 1), -- Jornada 9
-(3, 1, 1), -- Jornada 10
-(4, 1, 1), -- Jornada 11
-(2, 2, 1), -- Jornada 12
-(3, 2, 1), -- Jornada 13
-(4, 2, 1),  -- Jornada 14
-(1, 3, 1), -- Jornada 15
-(2, 3, 1), -- Jornada 16
-(3, 3, 1), -- Jornada 17
-(4, 3, 1); -- Jornada 18
+INSERT INTO JORNADA (semana, mes, fase, id_temporada) VALUES
+(3, 10, 1, 1), -- Jornada 1
+(4, 10, 1, 1), -- Jornada 2
+(2, 11, 1, 1), -- Jornada 3
+(3, 11, 1, 1), -- Jornada 4
+(4, 11, 1, 1), -- Jornada 5
+(1, 12, 1, 1),  -- Jornada 6
+(3, 12, 1, 1), -- Jornada 7
+(4, 12, 1, 1), -- Jornada 8
+(2, 1, 1, 1), -- Jornada 9
+(3, 1, 1, 1), -- Jornada 10
+(4, 1, 1, 1), -- Jornada 11
+(2, 2, 1, 1), -- Jornada 12
+(3, 2, 1, 1), -- Jornada 13
+(4, 2, 1, 1),  -- Jornada 14
+(2, 3, 1, 1), -- Jornada 15
+(3, 3, 1, 1), -- Jornada 16
+(4, 3, 1, 1), -- Jornada 17
+(5, 3, 1, 1); -- Jornada 18
 
 
--- Inserción de partidos en la tabla PARTIDOS
-INSERT INTO PARTIDOS (id_equip_local, id_equip_visit, fecha, hora, puntos_local, puntos_visitante, ganador, jornada) VALUES
+INSERT INTO PARTIDO (id_equip_local, id_equip_visit, fecha, hora, puntos_local, puntos_visitante, ganador, jornada) VALUES
 -- Jornada 1: CB Los Alcores vs Juventud Deportiva Bormujos
 (1, 7, '2024-10-20', '13:00:00', NULL, NULL, 1, 1),
 -- Jornada 2: CB Paradas vs CB Los Alcores
@@ -75,3 +74,18 @@ INSERT INTO PARTIDOS (id_equip_local, id_equip_visit, fecha, hora, puntos_local,
 -- Jornada 18: EXCOM CB Puebla vs CB Los Alcores
 (2, 1, '2025-03-30', '12:00:00', NULL, NULL, NULL, 18);
 
+INSERT INTO Plantilla (nombre, apellidos, edad, numero, posicion, es_entrenador, id_equipo) VALUES
+('Antonio', 'Morillo Lopez', 0, 10, 'Pivot/Ala-Pivot', FALSE, 1),
+('Jose Alberto', 'Navarro Capitas', 0, 2, 'Escolta/Alero', FALSE, 1),
+('Carlos', 'Carreño Jiménez', 0, 13, 'Base', FALSE, 1),
+('Gabriel del Amor', 'León Jiménez', 20, 12, 'Base', FALSE, 1),
+('Antonio', 'Rubio Reyes', 0, 18, 'Pivot', FALSE, 1),
+('Pablo', 'Bonilla Cepero', 18, 14, 'Escolta/Alero', FALSE, 1),
+('Antonio', 'Vargas Aranda', 0, 21, 'Pivot/Ala-Pivot', FALSE, 1),
+('Oscar', 'Falcon Marquez', 0, 7, 'Escolta/Alero', FALSE, 1),
+('Jose Antonio', 'Atienza Costazar', 0, 3, 'Base', FALSE, 1),
+('Carlos', 'Atienza Costazar', 0, 15, 'Alero/Ala-Pivot', FALSE, 1),
+('Francisco', 'Ruiz Florido', 20, 8, 'Alero/Ala-Pivot', FALSE, 1),
+('Jesús', 'Poyatos Herrera', 0, 17, 'Alero', FALSE, 1),
+('Adrian', 'Blanque Muñoz', 0, 6, 'Base', FALSE, 1),
+('José María', 'Mena Bernal Salguero', 0, NULL, 'Entrenador', TRUE, 1);

@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.daw.persistence.entities.Jugador;
+import com.daw.persistence.entities.Plantilla;
 import com.daw.persistence.repositories.JugadorRepository;
 
 @Service
@@ -15,7 +15,7 @@ public class JugadorService {
 	@Autowired
 	private JugadorRepository jugadorRepository;
 
-	public List<Jugador> findAll() {
+	public List<Plantilla> findAll() {
 		return this.jugadorRepository.findAll();
 	}
 	
@@ -23,15 +23,15 @@ public class JugadorService {
 		return this.jugadorRepository.existsById(idJugador);
 	}
 	
-	public Optional<Jugador> findById(int idPizza) {
+	public Optional<Plantilla> findById(int idPizza) {
 		return this.jugadorRepository.findById(idPizza);
 	}
 	
-	public Jugador create(Jugador jugador) {
+	public Plantilla create(Plantilla jugador) {
 		return this.jugadorRepository.save(jugador);
 	}
 	
-	public Jugador save(Jugador jugador) {
+	public Plantilla save(Plantilla jugador) {
 		return this.jugadorRepository.save(jugador);
 	}
 	
@@ -46,7 +46,7 @@ public class JugadorService {
 		return result;
 	}
 	
-	public List<Jugador> getByNombre(String nombre) {
+	public List<Plantilla> getByNombre(String nombre) {
 		return this.jugadorRepository.findByDisponibleTrueAndNombreStartingWith(nombre);
 	}
 }

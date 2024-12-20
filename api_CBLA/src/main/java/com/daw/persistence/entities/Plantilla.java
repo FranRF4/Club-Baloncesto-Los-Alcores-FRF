@@ -18,7 +18,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Jugador {
+public class Plantilla {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,8 +33,14 @@ public class Jugador {
 	@Column(length = 2, nullable = false, unique = true)
 	private Integer edad;
 	
-	@Column(length = 2, nullable = false, unique = true)
+	@Column(length = 2, unique = true)
 	private Integer numero;
+
+	@Column(length = 2, nullable = false, unique = true)
+	private Integer posicion;
+	
+	@Column(name = "es_entrenador", nullable = false, unique = true)
+	private Integer esEntrenador;
 
 	@Column(name = "id_equipo")
 	private Integer idEquipo;

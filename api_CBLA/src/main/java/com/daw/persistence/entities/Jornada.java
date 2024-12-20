@@ -28,6 +28,9 @@ public class Jornada {
 	
 	@Column(length = 2, nullable = false)
 	private Integer mes;
+
+	@Column(length = 1, nullable = false)
+	private String fase;
 	
 	@Column(name = "id_temporada")
 	private Integer idTemporada;

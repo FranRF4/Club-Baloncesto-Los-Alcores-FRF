@@ -11,6 +11,7 @@ CREATE TABLE JORNADA (
     id INT AUTO_INCREMENT PRIMARY KEY,
     semana INT NOT NULL,
     mes INT NOT NULL,
+    fase CHAR(1) NOT NULL,
     id_temporada INT,
     FOREIGN KEY (id_temporada) REFERENCES TEMPORADAS(id)
 );
@@ -26,20 +27,22 @@ CREATE TABLE EQUIPO (
     color_visit VARCHAR(50)
 );
 
-CREATE TABLE JUGADOR (
+CREATE TABLE Plantilla (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     apellidos VARCHAR(100) NOT NULL,
     edad INT NOT NULL,
-    numero INT NOT NULL,
-    equipo INT,
-    FOREIGN KEY (equipo) REFERENCES EQUIPO(id)
+    numero INT,
+    posicion VARCHAR(50) NOT NULL,
+    es_entrenador BOOLEAN NOT NULL,
+    id_equipo INT,
+    FOREIGN KEY (id_equipo) REFERENCES EQUIPO(id)
 );
 
 CREATE TABLE PARTIDO (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    equip_local INT,
-    equip_visit INT,
+    id_equip_local INT,
+    id_equip_visit INT,
     fecha DATE NOT NULL,
     hora TIME NOT NULL,
     puntos_local INT NOT NULL,
