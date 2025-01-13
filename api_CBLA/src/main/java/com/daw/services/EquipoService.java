@@ -20,7 +20,7 @@ public class EquipoService {
 		return this.equipoRepository.findAll();
 	}
 	
-	public boolean existsCliente(Integer idEquipo){
+	public boolean existsEquipo(Integer idEquipo){
 		return this.equipoRepository.existsById(idEquipo);
 	}
 	

@@ -33,6 +33,14 @@ public class JornadaService {
 	public Jornada update(Jornada jornada) {		
 		return this.jornadaRepository.save(jornada);
 	}
+
+	public Jornada create(Jornada jornada) {
+		return this.jornadaRepository.save(jornada);
+	}
+	
+	public Jornada save(Jornada jornada) {
+		return this.jornadaRepository.save(jornada);
+	}
 	
 	public boolean delete(Integer idJornada) {
 		boolean result = false;

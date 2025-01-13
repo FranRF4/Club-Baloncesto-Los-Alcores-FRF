@@ -33,12 +33,12 @@ public class EquipoController {
 	
 	@GetMapping("/{idEquipo}")
 	public ResponseEntity<Equipo> findById(@PathVariable Integer idEquipo) {
-		Optional<Equipo> cliente = this.equipoService.findById(idEquipo);
-		if(cliente.isEmpty()) {
+		Optional<Equipo> equipo = this.equipoService.findById(idEquipo);
+		if(equipo.isEmpty()) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		return ResponseEntity.ok(cliente.get());
+		return ResponseEntity.ok(equipo.get());
 	}
 	
 	@PostMapping
@@ -51,7 +51,7 @@ public class EquipoController {
 		if(idEquipo != equipo.getId()) {
 			return ResponseEntity.badRequest().build();
 		}
-		else if(!this.equipoService.existsCliente(idEquipo)) {
+		else if(!this.equipoService.existsEquipo(idEquipo)) {
 			return ResponseEntity.notFound().build();
 		}
 		

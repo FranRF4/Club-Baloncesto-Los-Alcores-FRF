@@ -1,6 +1,7 @@
 package com.daw.web.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.daw.persistence.entities.Equipo;
 import com.daw.persistence.entities.Jornada;
 import com.daw.services.EquipoService;
 import com.daw.services.JornadaService;
@@ -22,7 +24,7 @@ import com.daw.services.JugadorService;
 
 
 @RestController
-@RequestMapping("/pedidos")
+@RequestMapping("/jornada")
 public class JornadaController {
 	
 	@Autowired
@@ -34,20 +36,17 @@ public class JornadaController {
 	}
 	
 	@GetMapping("/{idJornada}")
-	public ResponseEntity<Jornada> findById(@PathVariable Integer idJornada) {		
-		if(this.jornadaService.existsJornada(idJornada)) {
-			return ResponseEntity.ok(this.jornadaService.findById(idJornada));
+	public ResponseEntity<Equipo> findById(@PathVariable Integer idJornada) {
+		Optional<Jornada> jornada = this.jornadaService.findById(idJornada);
+		if(jornada.isEmpty()) {
+			return ResponseEntity.notFound().build();
 		}
-
-		return ResponseEntity.notFound().build();
+		
+		return ResponseEntity.ok(jornada.get());
 	}
 	
 	@PostMapping
 	public ResponseEntity<Jornada> create(@RequestBody Jornada jornada){
-		if(!this.jornadaService.existsJornada(jornada.getIdJornada())) {
-			return ResponseEntity.notFound().build();
-		}
-		
 		return new ResponseEntity<Jornada>(this.jornadaService.create(jornada), HttpStatus.CREATED);
 	}
 	
