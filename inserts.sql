@@ -52,9 +52,9 @@ INSERT INTO PARTIDO (id_equip_local, id_equip_visit, fecha, hora, puntos_local, 
 -- Jornada 7: CB Los Alcores vs CP Albancor
 (1, 6, '2024-12-15', '13:00:00', NULL, NULL, 1, 7),
 -- Jornada 8: CDB Guillena vs CB Los Alcores
-(8, 1, '2024-12-21', '17:00:00', NULL, NULL, NULL, 8),
+(8, 1, '2024-12-21', '17:00:00', NULL, NULL, 1, 8),
 -- Jornada 9: CB Los Alcores vs EXCOM CB Puebla
-(1, 2, '2025-01-12', '13:00:00', NULL, NULL, NULL, 9),
+(1, 2, '2025-01-12', '13:00:00', NULL, NULL, 1, 9),
 -- Jornada 10: Juventud Deportiva Bormujos vs CB Los Alcores
 (7, 1, '2025-01-19', '19:15:00', NULL, NULL, NULL, 10),
 -- Jornada 11: CB Los Alcores vs CB Paradas
