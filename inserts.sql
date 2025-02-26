@@ -74,6 +74,7 @@ INSERT INTO PARTIDO (id_equip_local, id_equip_visit, fecha, hora, puntos_local, 
 -- Jornada 18: EXCOM CB Puebla vs CB Los Alcores
 (2, 1, '2025-03-30', '12:00:00', NULL, NULL, NULL, 18);
 
+<<<<<<< HEAD
 INSERT INTO JUGADOR (nombre, apellidos, imagen, edad, numero, posicion, es_entrenador, id_equipo) VALUES
 ('Antonio', 'Morillo Lopez', NULL, 0, 10, 'Pivot/Ala-Pivot', FALSE, 1),
 ('Jose Alberto', 'Navarro Capitas', NULL, 0, 2, 'Escolta/Alero', FALSE, 1),
@@ -91,3 +92,20 @@ INSERT INTO JUGADOR (nombre, apellidos, imagen, edad, numero, posicion, es_entre
 ('José María', 'Mena Bernal Salguero', NULL, 0, NULL, 'Entrenador', TRUE, 1),
 ('Jose Manuel', 'Romero Huertas', NULL, 0, 9, 'Escolta', FALSE, 1),
 ('Pedro Nolasco', 'Ruiz Gomez', NULL, 20, 5, 'Ala-Pivot', FALSE, 1);
+=======
+INSERT INTO Plantilla (nombre, apellidos, edad, numero, posicion, es_entrenador, id_equipo) VALUES
+('Antonio', 'Morillo Lopez', 0, 10, 'Pivot/Ala-Pivot', FALSE, 1),
+('Jose Alberto', 'Navarro Capitas', 0, 2, 'Escolta/Alero', FALSE, 1),
+('Carlos', 'Carreño Jiménez', 0, 13, 'Base', FALSE, 1),
+('Gabriel del Amor', 'León Jiménez', 20, 12, 'Base', FALSE, 1),
+('Antonio', 'Rubio Reyes', 0, 18, 'Pivot', FALSE, 1),
+('Pablo', 'Bonilla Cepero', 18, 14, 'Escolta/Alero', FALSE, 1),
+('Antonio', 'Vargas Aranda', 0, 21, 'Pivot/Ala-Pivot', FALSE, 1),
+('Oscar', 'Falcon Marquez', 0, 7, 'Escolta/Alero', FALSE, 1),
+('Jose Antonio', 'Atienza Costazar', 0, 3, 'Base', FALSE, 1),
+('Carlos', 'Atienza Costazar', 0, 15, 'Alero/Ala-Pivot', FALSE, 1),
+('Francisco', 'Ruiz Florido', 20, 8, 'Alero/Ala-Pivot', FALSE, 1),
+('Jesús', 'Poyatos Herrera', 0, 17, 'Alero', FALSE, 1),
+('Adrian', 'Blanque Muñoz', 0, 6, 'Base', FALSE, 1),
+('José María', 'Mena Bernal Salguero', 0, NULL, 'Entrenador', TRUE, 1);
+>>>>>>> 1128c9a9a6873c2d23dfdee9ca40f866b20fef69
