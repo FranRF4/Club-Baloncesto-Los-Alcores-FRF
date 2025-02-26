@@ -15,12 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.daw.persistence.entities.Equipo;
 import com.daw.persistence.entities.Jornada;
-import com.daw.services.EquipoService;
 import com.daw.services.JornadaService;
-import com.daw.services.PartidoService;
-import com.daw.services.JugadorService;
+
 
 
 @RestController
@@ -36,7 +33,7 @@ public class JornadaController {
 	}
 	
 	@GetMapping("/{idJornada}")
-	public ResponseEntity<Equipo> findById(@PathVariable Integer idJornada) {
+	public ResponseEntity<Jornada> findById(@PathVariable Integer idJornada) {
 		Optional<Jornada> jornada = this.jornadaService.findById(idJornada);
 		if(jornada.isEmpty()) {
 			return ResponseEntity.notFound().build();
