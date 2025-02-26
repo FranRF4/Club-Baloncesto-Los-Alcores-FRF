@@ -27,10 +27,11 @@ CREATE TABLE EQUIPO (
     color_visit VARCHAR(50)
 );
 
-CREATE TABLE Plantilla (
+CREATE TABLE JUGADOR (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     apellidos VARCHAR(100) NOT NULL,
+    imagen VARCHAR(255),
     edad INT NOT NULL,
     numero INT,
     posicion VARCHAR(50) NOT NULL,
@@ -55,10 +56,20 @@ CREATE TABLE PARTIDO (
     FOREIGN KEY (id_jornada) REFERENCES JORNADA(id)
 );
 
-CREATE TABLE Usuario (
+CREATE TABLE USUARIO (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
     email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
+    password VARCHAR(100) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE Usuario_Sigue_Jugador (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    id_jugador INT NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES USUARIO(id),
+    FOREIGN KEY (id_jugador) REFERENCES JUGADOR(id),
+    UNIQUE (id_usuario, id_jugador)
+);
+

@@ -52,19 +52,19 @@ INSERT INTO PARTIDO (id_equip_local, id_equip_visit, fecha, hora, puntos_local, 
 -- Jornada 7: CB Los Alcores vs CP Albancor
 (1, 6, '2024-12-15', '13:00:00', NULL, NULL, 1, 7),
 -- Jornada 8: CDB Guillena vs CB Los Alcores
-(8, 1, '2024-12-21', '17:00:00', NULL, NULL, NULL, 8),
+(8, 1, '2024-12-21', '17:00:00', NULL, NULL, 1, 8),
 -- Jornada 9: CB Los Alcores vs EXCOM CB Puebla
-(1, 2, '2025-01-12', '13:00:00', NULL, NULL, NULL, 9),
+(1, 2, '2025-01-12', '13:00:00', NULL, NULL, 1, 9),
 -- Jornada 10: Juventud Deportiva Bormujos vs CB Los Alcores
-(7, 1, '2025-01-19', '19:15:00', NULL, NULL, NULL, 10),
+(7, 1, '2025-01-19', '19:15:00', NULL, NULL, 1, 10),
 -- Jornada 11: CB Los Alcores vs CB Paradas
-(1, 5, '2025-01-26', '13:00:00', NULL, NULL, NULL, 11),
+(1, 5, '2025-01-26', '13:00:00', NULL, NULL, 1, 11),
 -- Jornada 12: Clínica Montaño CDB Herrera vs CB Los Alcores
 (10, 1, '2025-02-09', '17:30:00', NULL, NULL, NULL, 12),
 -- Jornada 13: CB Los Alcores vs CB Coria
-(1, 3, '2025-02-16', '13:00:00', NULL, NULL, NULL, 13),
+(1, 3, '2025-02-16', '13:00:00', NULL, NULL, 3, 13),
 -- Jornada 14: Club de Baloncesto Sajuma vs CB Los Alcores
-(9, 1, '2025-02-23', '17:45:00', NULL, NULL, NULL, 14),
+(9, 1, '2025-02-23', '17:45:00', NULL, NULL, 9, 14),
 -- Jornada 15: CB Los Alcores vs CD Tartessos Lebrija
 (1, 4, '2025-03-09', '13:00:00', NULL, NULL, NULL, 15),
 -- Jornada 16: CP Albancor vs CB Los Alcores
@@ -74,18 +74,20 @@ INSERT INTO PARTIDO (id_equip_local, id_equip_visit, fecha, hora, puntos_local, 
 -- Jornada 18: EXCOM CB Puebla vs CB Los Alcores
 (2, 1, '2025-03-30', '12:00:00', NULL, NULL, NULL, 18);
 
-INSERT INTO Plantilla (nombre, apellidos, edad, numero, posicion, es_entrenador, id_equipo) VALUES
-('Antonio', 'Morillo Lopez', 0, 10, 'Pivot/Ala-Pivot', FALSE, 1),
-('Jose Alberto', 'Navarro Capitas', 0, 2, 'Escolta/Alero', FALSE, 1),
-('Carlos', 'Carreño Jiménez', 0, 13, 'Base', FALSE, 1),
-('Gabriel del Amor', 'León Jiménez', 20, 12, 'Base', FALSE, 1),
-('Antonio', 'Rubio Reyes', 0, 18, 'Pivot', FALSE, 1),
-('Pablo', 'Bonilla Cepero', 18, 14, 'Escolta/Alero', FALSE, 1),
-('Antonio', 'Vargas Aranda', 0, 21, 'Pivot/Ala-Pivot', FALSE, 1),
-('Oscar', 'Falcon Marquez', 0, 7, 'Escolta/Alero', FALSE, 1),
-('Jose Antonio', 'Atienza Costazar', 0, 3, 'Base', FALSE, 1),
-('Carlos', 'Atienza Costazar', 0, 15, 'Alero/Ala-Pivot', FALSE, 1),
-('Francisco', 'Ruiz Florido', 20, 8, 'Alero/Ala-Pivot', FALSE, 1),
-('Jesús', 'Poyatos Herrera', 0, 17, 'Alero', FALSE, 1),
-('Adrian', 'Blanque Muñoz', 0, 6, 'Base', FALSE, 1),
-('José María', 'Mena Bernal Salguero', 0, NULL, 'Entrenador', TRUE, 1);
+INSERT INTO JUGADOR (nombre, apellidos, imagen, edad, numero, posicion, es_entrenador, id_equipo) VALUES
+('Antonio', 'Morillo Lopez', NULL, 0, 10, 'Pivot/Ala-Pivot', FALSE, 1),
+('Jose Alberto', 'Navarro Capitas', NULL, 0, 2, 'Escolta/Alero', FALSE, 1),
+('Carlos', 'Carreño Jiménez', NULL, 0, 13, 'Base', FALSE, 1),
+('Gabriel del Amor', 'León Jiménez', NULL, 20, 12, 'Base', FALSE, 1),
+('Antonio', 'Rubio Reyes', NULL, 0, 18, 'Pivot', FALSE, 1),
+('Pablo', 'Bonilla Cepero', NULL, 18, 14, 'Escolta/Alero', FALSE, 1),
+('Antonio', 'Vargas Aranda', NULL, 0, 21, 'Pivot/Ala-Pivot', FALSE, 1),
+('Oscar', 'Falcon Marquez', NULL, 0, 7, 'Escolta/Alero', FALSE, 1),
+('Jose Antonio', 'Atienza Costazar', NULL, 0, 3, 'Base', FALSE, 1),
+('Carlos', 'Atienza Costazar', NULL, 0, 15, 'Alero/Ala-Pivot', FALSE, 1),
+('Francisco', 'Ruiz Florido', NULL, 20, 8, 'Alero/Ala-Pivot', FALSE, 1),
+('Jesús', 'Poyatos Herrera', NULL, 0, 17, 'Alero', FALSE, 1),
+('Adrian', 'Blanque Muñoz', NULL, 0, 6, 'Base', FALSE, 1),
+('José María', 'Mena Bernal Salguero', NULL, 0, NULL, 'Entrenador', TRUE, 1),
+('Jose Manuel', 'Romero Huertas', NULL, 0, 9, 'Escolta', FALSE, 1),
+('Pedro Nolasco', 'Ruiz Gomez', NULL, 20, 5, 'Ala-Pivot', FALSE, 1);
