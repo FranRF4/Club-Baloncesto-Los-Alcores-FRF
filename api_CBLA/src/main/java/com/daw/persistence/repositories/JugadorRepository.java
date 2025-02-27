@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.data.repository.ListCrudRepository;
 
-import com.daw.persistence.entities.Plantilla;
+import com.daw.persistence.entities.Jugador;
 
-public interface JugadorRepository extends ListCrudRepository<Plantilla, Integer> {
+public interface JugadorRepository extends ListCrudRepository<Jugador, Integer> {
 
-	List<Plantilla> findByDisponibleTrueAndNombreStartingWith(String nombre);
+	List<Jugador> findByDisponibleTrueAndNombreStartingWith(String nombre);
 }

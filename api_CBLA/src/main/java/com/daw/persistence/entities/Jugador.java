@@ -18,7 +18,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Plantilla {
+public class Jugador {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
