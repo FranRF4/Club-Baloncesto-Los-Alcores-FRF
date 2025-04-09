@@ -22,7 +22,7 @@ import com.daw.services.JugadorService;
 
 
 @RestController
-@RequestMapping("/jugador")
+@RequestMapping("/jugadores")
 public class JugadorController {
 	
 	@Autowired

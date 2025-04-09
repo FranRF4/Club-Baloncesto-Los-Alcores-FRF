@@ -22,7 +22,7 @@ import com.daw.services.TemporadaService;
 
 
 @RestController
-@RequestMapping("/temporada")
+@RequestMapping("/temporadas")
 public class TemporadaController {
 	
 	@Autowired

@@ -22,7 +22,7 @@ public class UsuarioService {
 		return this.usuarioRepository.findAll();
 	}
 	
-	public boolean existsTemorada(Integer idUsuario){
+	public boolean existsUsuario(Integer idUsuario){
 		return this.usuarioRepository.existsById(idUsuario);
 	}
 	

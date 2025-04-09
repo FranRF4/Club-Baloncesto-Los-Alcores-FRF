@@ -21,7 +21,7 @@ import com.daw.services.JornadaService;
 
 
 @RestController
-@RequestMapping("/jornada")
+@RequestMapping("/jornadas")
 public class JornadaController {
 	
 	@Autowired

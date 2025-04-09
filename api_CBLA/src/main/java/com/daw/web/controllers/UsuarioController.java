@@ -22,7 +22,7 @@ import com.daw.services.UsuarioService;
 
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/usuarios")
 public class UsuarioController {
 	
 	@Autowired
@@ -33,7 +33,7 @@ public class UsuarioController {
 		return ResponseEntity.ok(this.usuarioService.findAll());
 	}
 	
-	@GetMapping("/{idTemporada}")
+	@GetMapping("/{idusuario}")
 	public ResponseEntity<Usuario> findById(@PathVariable Integer idUsuario) {
 		Optional<Usuario> usuario = this.usuarioService.findById(idUsuario);
 		if(usuario.isEmpty()) {
@@ -48,19 +48,19 @@ public class UsuarioController {
 		return new ResponseEntity<Usuario>(this.usuarioService.create(usuario), HttpStatus.CREATED);
 	}
 	
-	@PutMapping("/{idTemporada}")
+	@PutMapping("/{idusuario}")
 	public ResponseEntity<Usuario> update(@PathVariable Integer idUsuario, @RequestBody Usuario usuario){
 		if(idUsuario != usuario.getId()) {
 			return ResponseEntity.badRequest().build();
 		}
-		if(!this.usuarioService.existsTemorada(idUsuario)) {
+		if(!this.usuarioService.existsUsuario(idUsuario)) {
 			return ResponseEntity.notFound().build();
 		}
 		
 		return ResponseEntity.ok(this.usuarioService.save(usuario));
 	}
 	
-	@DeleteMapping("/{idTemporada}")
+	@DeleteMapping("/{idusuario}")
 	public ResponseEntity<Usuario> delete(@PathVariable Integer idUsuario){
 		if(this.usuarioService.delete(idUsuario)) {
 			return ResponseEntity.ok().build();

@@ -22,7 +22,7 @@ import com.daw.services.PartidoService;
 
 
 @RestController
-@RequestMapping("/partido")
+@RequestMapping("/partidos")
 public class PartidoController {
 	
 	@Autowired

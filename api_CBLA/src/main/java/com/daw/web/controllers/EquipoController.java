@@ -20,7 +20,7 @@ import com.daw.services.EquipoService;
 
 
 @RestController
-@RequestMapping("/equipo")
+@RequestMapping("/equipos")
 public class EquipoController {
 
 	@Autowired
