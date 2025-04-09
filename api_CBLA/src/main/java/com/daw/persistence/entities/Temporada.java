@@ -21,9 +21,9 @@ public class Temporada {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(length = 4)
+	@Column(length = 4, nullable = false)
 	private Integer anio;
 	
-	@Column(length = 50)
+	@Column(length = 50, nullable = false)
 	private String categoria;
 }

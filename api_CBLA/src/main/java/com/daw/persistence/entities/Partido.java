@@ -32,14 +32,16 @@ public class Partido {
 	@Column(name = "id_equip_visit")
 	private Integer idEquipVisit;
 
+	@Column(columnDefinition = "DATE")
 	private LocalDate fecha;
 
+	@Column(columnDefinition = "TIME")
 	private LocalTime hora;
 
-	@Column(name = "puntos_local", nullable = false, unique = true)
+	@Column(name = "puntos_local", nullable = false)
 	private Integer puntosLocal;
 
-	@Column(name = "puntos_visitante", nullable = false, unique = true)
+	@Column(name = "puntos_visitante", nullable = false)
 	private Integer puntosVisitante;
 
 	@Column(name = "id_ganador")

@@ -8,5 +8,5 @@ import com.daw.persistence.entities.Jugador;
 
 public interface JugadorRepository extends ListCrudRepository<Jugador, Integer> {
 
-	List<Jugador> findByDisponibleTrueAndNombreStartingWith(String nombre);
+	List<Jugador> findByNombreStartingWith(String nombre);
 }

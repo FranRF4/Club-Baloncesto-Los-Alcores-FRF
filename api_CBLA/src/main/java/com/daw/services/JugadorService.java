@@ -47,6 +47,6 @@ public class JugadorService {
 	}
 	
 	public List<Jugador> getByNombre(String nombre) {
-		return this.jugadorRepository.findByDisponibleTrueAndNombreStartingWith(nombre);
+		return this.jugadorRepository.findByNombreStartingWith(nombre);
 	}
 }

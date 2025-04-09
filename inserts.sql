@@ -1,21 +1,21 @@
-INSERT INTO TEMPORADA (anio, categoria) VALUES (2024, '2ª Senior Provincial Masculina Sevilla');
+INSERT INTO temporada (anio, categoria) VALUES (2024, '2ª Senior Provincial Masculina Sevilla');
 
 
-INSERT INTO EQUIPO (nombre, categoria, escudo, nombre_campo, ubi_campo, color_local, color_visit) VALUES
-('CB Los Alcores 2013', '2ª Senior Provincial Masculina Sevilla', NULL, 'Pabellón Santa Lucía', 'El Viso del Alcor, Sevilla', 'Desconocido', 'Desconocido'),
-('EXCOM CB Puebla', '2ª Senior Provincial Masculina Sevilla', NULL, 'Pabellón Enrique Lora', 'Puebla del Río, Sevilla', 'Desconocido', 'Desconocido'),
-('CB Coria', '2ª Senior Provincial Masculina Sevilla', NULL, 'Pabellón Municipal CB Coria', 'Coria del Río, Sevilla', 'Desconocido', 'Desconocido'),
-('CD Tartessos Lebrija', '2ª Senior Provincial Masculina Sevilla', NULL, 'Pabellón Cubierto 2', 'Lebrija, Sevilla', 'Desconocido', 'Desconocido'),
-('CB Paradas', '2ª Senior Provincial Masculina Sevilla', NULL, 'Pabellón Municipal Francisco Muñoz Moreno', 'Paradas, Sevilla', 'Desconocido', 'Desconocido'),
-('CP Albancor', '2ª Senior Provincial Masculina Sevilla', NULL, 'Pabellón Cubierto Miguel Ángel Gómez Campuzano', 'Mairena del Alcor, Sevilla', 'Desconocido', 'Desconocido'),
-('Juventud Deportiva Bormujos', '2ª Senior Provincial Masculina Sevilla', NULL, 'Pabellón Municipal de Bormujos', 'Bormujos, Sevilla', 'Desconocido', 'Desconocido'),
-('CDB Guillena', '2ª Senior Provincial Masculina Sevilla', NULL, 'Pabellón Municipal de Deportes "La Villa"', 'Guillena, Sevilla', 'Desconocido', 'Desconocido'),
-('Club de Baloncesto Sajuma', '2ª Senior Provincial Masculina Sevilla', NULL, 'Colegio Salesianos Santísima Trinidad (Pabellón)', 'Sevilla', 'Desconocido', 'Desconocido'),
-('Clínica Montaño CDB Herrera', '2ª Senior Provincial Masculina Sevilla', NULL, 'Pabellón Municipal de Deportes', 'Herrera, Sevilla', 'Desconocido', 'Desconocido');
+INSERT INTO equipo (nombre, categoria, escudo, nombre_campo, ubi_campo, color_local, color_visit) VALUES
+('CB Los Alcores 2013', '2ª Senior Provincial Masculina Sevilla', "NULL", 'Pabellón Santa Lucía', 'El Viso del Alcor, Sevilla', 'Azul', 'Blanco'),
+('EXCOM CB Puebla', '2ª Senior Provincial Masculina Sevilla', "NULL", 'Pabellón Enrique Lora', 'Puebla del Río, Sevilla', 'Azul', 'Blanco'),
+('CB Coria', '2ª Senior Provincial Masculina Sevilla', "NULL", 'Pabellón Municipal CB Coria', 'Coria del Río, Sevilla', 'Azul', 'Blanco'),
+('CD Tartessos Lebrija', '2ª Senior Provincial Masculina Sevilla', "NULL", 'Pabellón Cubierto 2', 'Lebrija, Sevilla', 'Blanco', 'Azul'),
+('CB Paradas', '2ª Senior Provincial Masculina Sevilla', "NULL", 'Pabellón Municipal Francisco Muñoz Moreno', 'Paradas, Sevilla', 'Morado', 'Amarillo'),
+('CP Albancor', '2ª Senior Provincial Masculina Sevilla', "NULL", 'Pabellón Cubierto Miguel Ángel Gómez Campuzano', 'Mairena del Alcor, Sevilla', 'Negro', 'Blanco'),
+('Juventud Deportiva Bormujos', '2ª Senior Provincial Masculina Sevilla', "NULL", 'Pabellón Municipal de Bormujos', 'Bormujos, Sevilla', 'Blanco', 'Verde'),
+('CDB Guillena', '2ª Senior Provincial Masculina Sevilla', "NULL", 'Pabellón Municipal de Deportes "La Villa"', 'Guillena, Sevilla', 'Rojo', 'Azul'),
+('Club de Baloncesto Sajuma', '2ª Senior Provincial Masculina Sevilla', "NULL", 'Colegio Salesianos Santísima Trinidad', 'Sevilla', 'Rojo', 'Blanco'),
+('Clínica Montaño CDB Herrera', '2ª Senior Provincial Masculina Sevilla', "NULL", 'Pabellón Municipal de Deportes', 'Herrera, Sevilla', 'Negro', 'Rojo');
 
 
 
-INSERT INTO JORNADA (semana, mes, fase, id_temporada) VALUES
+INSERT INTO jornada (semana, mes, fase, id_temporada) VALUES
 (3, 10, 1, 1), -- Jornada 1
 (4, 10, 1, 1), -- Jornada 2
 (2, 11, 1, 1), -- Jornada 3
@@ -36,7 +36,7 @@ INSERT INTO JORNADA (semana, mes, fase, id_temporada) VALUES
 (5, 3, 1, 1); -- Jornada 18
 
 
-INSERT INTO PARTIDO (id_equip_local, id_equip_visit, fecha, hora, puntos_local, puntos_visitante, ganador, jornada) VALUES
+INSERT INTO partido (id_equip_local, id_equip_visit, fecha, hora, puntos_local, puntos_visitante, id_ganador, id_jornada) VALUES
 -- Jornada 1: CB Los Alcores vs Juventud Deportiva Bormujos
 (1, 7, '2024-10-20', '13:00:00', 63, 51, 1, 1),
 -- Jornada 2: CB Paradas vs CB Los Alcores
@@ -74,7 +74,7 @@ INSERT INTO PARTIDO (id_equip_local, id_equip_visit, fecha, hora, puntos_local, 
 -- Jornada 18: EXCOM CB Puebla vs CB Los Alcores
 (2, 1, '2025-03-30', '12:00:00', 50, 59, 1, 18);
 
-INSERT INTO JUGADOR (nombre, apellidos, imagen, edad, numero, posicion, es_entrenador, id_equipo) VALUES
+INSERT INTO jugador (nombre, apellidos, imagen, edad, numero, posicion, es_entrenador, id_equipo) VALUES
 ('Antonio', 'Morillo Lopez', NULL, 0, 10, 'Pivot/Ala-Pivot', FALSE, 1),
 ('Jose Alberto', 'Navarro Capitas', NULL, 0, 2, 'Escolta/Alero', FALSE, 1),
 ('Carlos', 'Carreño Jiménez', NULL, 0, 13, 'Base', FALSE, 1),
@@ -88,7 +88,7 @@ INSERT INTO JUGADOR (nombre, apellidos, imagen, edad, numero, posicion, es_entre
 ('Francisco', 'Ruiz Florido', NULL, 20, 8, 'Alero/Ala-Pivot', FALSE, 1),
 ('Jesús', 'Poyatos Herrera', NULL, 31, 17, 'Alero', FALSE, 1),
 ('Adrian', 'Blanque Muñoz', NULL, 28, 6, 'Base', FALSE, 1),
-('José María', 'Mena Bernal Salguero', NULL, 0, NULL, 'Entrenador', TRUE, 1),
+('José María', 'Mena Bernal Salguero', NULL, NULL, NULL, 'Entrenador', TRUE, 1),
 ('Jose Manuel', 'Romero Huertas', NULL, 30, 9, 'Escolta', FALSE, 1),
 ('Pedro Nolasco', 'Ruiz Gomez', NULL, 20, 5, 'Ala-Pivot', FALSE, 1);
 

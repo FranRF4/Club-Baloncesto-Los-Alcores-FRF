@@ -29,18 +29,21 @@ public class Jugador {
 	
 	@Column(length = 100, nullable = false)
 	private String apellidos;
+
+	@Column(length = 255)
+	private String imagen;
 	
-	@Column(length = 2, nullable = false, unique = true)
+	@Column(length = 2)
 	private Integer edad;
 	
-	@Column(length = 2, unique = true)
+	@Column(length = 2)
 	private Integer numero;
 
-	@Column(length = 2, nullable = false, unique = true)
-	private Integer posicion;
+	@Column(nullable = false)
+	private String posicion;
 	
-	@Column(name = "es_entrenador", nullable = false, unique = true)
-	private Integer esEntrenador;
+	@Column(name = "es_entrenador", nullable = false)
+	private Boolean esEntrenador;
 
 	@Column(name = "id_equipo")
 	private Integer idEquipo;
