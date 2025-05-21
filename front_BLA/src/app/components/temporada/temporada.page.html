@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Temporada
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Temporada</ion-title>
+      
+    </ion-toolbar>
+  </ion-header>
+
+  <div><h2>Lista de Temporadas</h2>
+
+    <div *ngFor="let temporada of temporadaLista">
+      <ion-button href="../../tabs/jornadas"><strong>Año:</strong> {{ temporada.anio }}
+      <strong>Categoria:</strong> {{ temporada.categoria }}</ion-button>
+    </div></div>
+
+</ion-content>
