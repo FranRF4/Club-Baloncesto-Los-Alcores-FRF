@@ -16,15 +16,13 @@
   <div>
     <h2>Jornadas</h2>
     <div *ngFor="let jornada of jornadaLista">
-      <ion-button href="../../tabs/temporada"><strong>Jornada:</strong> {{ jornada.id }}
+      <ion-button [routerLink]="['/tabs/partidos/partido', jornada.id]">
+        <strong>Jornada:</strong> {{ jornada.id }}
         <strong>Semana:</strong> {{ jornada.semana }}
         <strong>Mes:</strong> {{ jornada.mes }}
         <strong>Fase:</strong> {{ jornada.fase }}
-        <strong>Temporada:</strong> {{ jornada.temporada }}</ion-button>
+      </ion-button>
     </div>
   </div>
 
-
-
-  <app-explore-container name="Equipo page"></app-explore-container>
 </ion-content>

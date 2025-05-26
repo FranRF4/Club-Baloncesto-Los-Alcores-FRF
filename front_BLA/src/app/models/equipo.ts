@@ -3,26 +3,26 @@ export class Equipo {
     private _nombre: string;
     private _categoria: string;
     private _escudo: string;
-    private _nombreCampo: string;
-    private _ubiCampo: string;
+    private _nombre_campo: string;
+    private _ubi_campo: string;
     private _colorLocal: string;
     private _colorVisit: string;
 
     constructor(id: number, nombre: string, categoria: string, escudo: string, 
-        nombreCampo: string, ubiCampo: string, colorLocal: string, colorVisit: string) {
+        nombre_campo: string, ubi_campo: string, colorLocal: string, colorVisit: string) {
         this._id = id;
         this._nombre = nombre;
         this._categoria = categoria;
         this._escudo = escudo;
-        this._nombreCampo = nombreCampo;
-        this._ubiCampo = ubiCampo;
+        this._nombre_campo = nombre_campo;
+        this._ubi_campo = ubi_campo;
         this._colorLocal = colorLocal;
         this._colorVisit = colorVisit;
     }
 
     public get id(): number {
         return this._id;
-    }
+    } 
 
     public set id(value: number) {
         this._id = value;
@@ -52,20 +52,20 @@ export class Equipo {
         this._escudo = value;
     }
 
-    public get nombreCampo(): string {
-        return this._nombreCampo;
+    public get nombre_campo(): string {
+        return this._nombre_campo;
     }
 
-    public set nombreCampo(value: string) {
-        this._nombreCampo = value;
+    public set nombre_campo(value: string) {
+        this._nombre_campo = value;
     }
 
-    public get ubiCampo(): string {
-        return this._ubiCampo;
+    public get ubi_Campo(): string {
+        return this._ubi_campo;
     }
 
     public set ubiCampo(value: string) {
-        this._ubiCampo = value;
+        this._ubi_campo = value;
     }
 
     public get colorLocal(): string {

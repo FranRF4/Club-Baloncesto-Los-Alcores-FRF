@@ -3,8 +3,8 @@ import { Jornada } from "./jornada";
 
 export class Partido {
     private _id: number;
-    private _equipoLocal: Equipo;
-    private _equipoVisitante: Equipo;
+    private _equip_local: Equipo;
+    private _equip_visit: Equipo;
     private _fecha: Date;
     private _hora: string;
     private _puntosLocal: number;
@@ -12,11 +12,11 @@ export class Partido {
     private _ganador: Equipo;
     private _jornada: Jornada;
 
-    constructor(id: number, equipoLocal: Equipo, equipoVisitante: Equipo,fecha: Date, hora: string, 
+    constructor(id: number, equip_local: Equipo, equip_visit: Equipo,fecha: Date, hora: string, 
         puntosLocal: number, puntosVisitante: number, ganador: Equipo, jornada: Jornada) {
         this._id = id;
-        this._equipoLocal = equipoLocal;
-        this._equipoVisitante = equipoVisitante;
+        this._equip_local = equip_local;
+        this._equip_visit = equip_visit;
         this._fecha = fecha;
         this._hora = hora;
         this._puntosLocal = puntosLocal;
@@ -33,20 +33,20 @@ export class Partido {
         this._id = value;
     }
 
-    public get equipoLocal(): Equipo {
-        return this._equipoLocal;
+    public get equip_local(): Equipo {
+        return this._equip_local;
     }
 
-    public set equipoLocal(value: Equipo) {
-        this._equipoLocal = value;
+    public set equip_local(value: Equipo) {
+        this._equip_local = value;
     }
 
-    public get equipoVisitante(): Equipo {
-        return this._equipoVisitante;
+    public get equip_visit(): Equipo {
+        return this._equip_visit;
     }
 
-    public set equipoVisitante(value: Equipo) {
-        this._equipoVisitante = value;
+    public set equip_visit(value: Equipo) {
+        this._equip_visit = value;
     }
 
     public get fecha(): Date {

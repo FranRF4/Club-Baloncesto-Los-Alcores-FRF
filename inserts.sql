@@ -2,17 +2,17 @@ INSERT INTO temporada (anio, categoria) VALUES (2024, '2ª Senior Provincial Mas
 
 
 INSERT INTO equipo (nombre, categoria, escudo, nombre_campo, ubi_campo, color_local, color_visit) VALUES
-('CB Los Alcores 2013', '2ª Senior Provincial Masculina Sevilla', "https://ibb.co/gbKsVvfB", 'Pabellón Santa Lucía', 'El Viso del Alcor, Sevilla', 'Azul', 'Blanco'),
-('EXCOM CB Puebla', '2ª Senior Provincial Masculina Sevilla', "https://ibb.co/Tdx7LXy", 'Pabellón Enrique Lora', 'Puebla del Río, Sevilla', 'Azul', 'Blanco'),
-('CB Coria', '2ª Senior Provincial Masculina Sevilla', "https://ibb.co/spD11bH4", 'Pabellón Municipal CB Coria', 'Coria del Río, Sevilla', 'Azul', 'Blanco'),
-('CD Tartessos Lebrija', '2ª Senior Provincial Masculina Sevilla', "https://ibb.co/R8gf9dF", 'Pabellón Cubierto 2', 'Lebrija, Sevilla', 'Blanco', 'Azul'),
-('CB Paradas', '2ª Senior Provincial Masculina Sevilla', "https://ibb.co/MDNx8VVG", 'Pabellón Municipal Francisco Muñoz Moreno', 'Paradas, Sevilla', 'Morado', 'Amarillo'),
-('CP Albancor', '2ª Senior Provincial Masculina Sevilla', "https://ibb.co/0RnNXHFj", 'Pabellón Cubierto Miguel Ángel Gómez Campuzano', 'Mairena del Alcor, Sevilla', 'Negro', 'Blanco'),
-('Juventud Deportiva Bormujos', '2ª Senior Provincial Masculina Sevilla', "https://ibb.co/pr3ZTvYj", 'Pabellón Municipal de Bormujos', 'Bormujos, Sevilla', 'Blanco', 'Verde'),
-('CDB Guillena', '2ª Senior Provincial Masculina Sevilla', "https://ibb.co/JRBkFKDf", 'Pabellón Municipal de Deportes "La Villa"', 'Guillena, Sevilla', 'Rojo', 'Azul'),
-('Club de Baloncesto Sajuma', '2ª Senior Provincial Masculina Sevilla', "https://ibb.co/zHmNn6Tc", 'Colegio Salesianos Santísima Trinidad', 'Sevilla', 'Rojo', 'Blanco'),
-('Clínica Montaño CDB Herrera', '2ª Senior Provincial Masculina Sevilla', "https://ibb.co/wh5tVCkm", 'Pabellón Municipal de Deportes', 'Herrera, Sevilla', 'Negro', 'Rojo'),
-('CB El Coronil', '2ª Senior Provincial Masculina Sevilla', "https://ibb.co/wh5tVCkm", 'Pabellón Municipal el Coronil', 'Coronil, Sevilla', 'Negro', 'Verde');
+('CB Los Alcores 2013', '2ª Senior Provincial Masculina Sevilla', "https://i.ibb.co/p6FCyWM9/1-CB-Los-Alcores.jpg", 'Pabellón Santa Lucía', 'El Viso del Alcor, Sevilla', 'Azul', 'Blanco'),
+('EXCOM CB Puebla', '2ª Senior Provincial Masculina Sevilla', "https://i.ibb.co/ntNYC2p/2-EXCOM-CB-Puebla.jpg", 'Pabellón Enrique Lora', 'Puebla del Río, Sevilla', 'Azul', 'Blanco'),
+('CB Coria', '2ª Senior Provincial Masculina Sevilla', "https://i.ibb.co/RGM66YyK/3-CB-Coria.png", 'Pabellón Municipal CB Coria', 'Coria del Río, Sevilla', 'Azul', 'Blanco'),
+('CD Tartessos Lebrija', '2ª Senior Provincial Masculina Sevilla', "https://i.ibb.co/Gmdy0N6/4-CD-Tartessos-Lebrija.jpg", 'Pabellón Cubierto 2', 'Lebrija, Sevilla', 'Blanco', 'Azul'),
+('CB Paradas', '2ª Senior Provincial Masculina Sevilla', "https://i.ibb.co/pvXBWzzR/5-CB-Paradas.png", 'Pabellón Municipal Francisco Muñoz Moreno', 'Paradas, Sevilla', 'Morado', 'Amarillo'),
+('CP Albancor', '2ª Senior Provincial Masculina Sevilla', "https://i.ibb.co/ycNTRHYn/6-CP-Albancor.jpg", 'Pabellón Cubierto Miguel Ángel Gómez Campuzano', 'Mairena del Alcor, Sevilla', 'Negro', 'Blanco'),
+('Juventud Deportiva Bormujos', '2ª Senior Provincial Masculina Sevilla', "https://i.ibb.co/fGCtWYjd/7-Juventud-Deportiva-Bormujos.jpg", 'Pabellón Municipal de Bormujos', 'Bormujos, Sevilla', 'Blanco', 'Verde'),
+('CDB Guillena', '2ª Senior Provincial Masculina Sevilla', "https://i.ibb.co/mCDzFGfL/8-CDB-Guillena.jpg", 'Pabellón Municipal de Deportes "La Villa"', 'Guillena, Sevilla', 'Rojo', 'Azul'),
+('Club de Baloncesto Sajuma', '2ª Senior Provincial Masculina Sevilla', "https://i.ibb.co/7NSbYkdc/9-Club-de-Baloncesto-Sajuma.png", 'Colegio Salesianos Santísima Trinidad', 'Sevilla', 'Rojo', 'Blanco'),
+('Clínica Montaño CDB Herrera', '2ª Senior Provincial Masculina Sevilla', "https://i.ibb.co/yFH2t59j/10-Cl-nica-Monta-o-CDB-Herrera.png", 'Pabellón Municipal de Deportes', 'Herrera, Sevilla', 'Negro', 'Rojo'),
+('CB El Coronil', '2ª Senior Provincial Masculina Sevilla', "https://i.ibb.co/20BvvNF0/11-CB-El-Coronil.webp", 'Pabellón Municipal el Coronil', 'Coronil, Sevilla', 'Negro', 'Verde');
 
 
 INSERT INTO jornada (semana, mes, fase, id_temporada) VALUES
@@ -89,14 +89,14 @@ INSERT INTO partido (id_equip_local, id_equip_visit, fecha, hora, puntos_local, 
 -- Cuartos 2: CB Los Alcores vs CP Albancor
 (1, 6, '2025-05-19', '13:00:00', 52, 52, 1, 22),
 -- Semis: CB Los Alcores vs Clínica Montaño CDB Herrera
-(1, 10, '2025-05-24', '19:00:00', 68, 71, 1, 23),
--- Final: CB Los Alcores vs CD Tartessos Lebrija
-(1, 4, '2025-05-25', '13:00:00', 52, 52, 1, 24);
+(1, 10, '2025-05-24', '19:00:00', 55, 49, 1, 23),
+-- Final: Tartessos Lebrija vs CD CB Los Alcores
+(4, 1, '2025-05-25', '13:30:00', 65, 57, 4, 24);
 
 INSERT INTO jugador (nombre, apellidos, imagen, edad, numero, posicion, es_entrenador, id_equipo) VALUES
 ('Antonio', 'Morillo Lopez', NULL, 0, 10, 'Pivot/Ala-Pivot', FALSE, 1),
-('Jose Alberto', 'Navarro Capitas', NULL, 0, 2, 'Escolta/Alero', FALSE, 1),
-('Carlos', 'Carreño Jiménez', NULL, 0, 13, 'Base', FALSE, 1),
+('Jose Alberto', 'Navarro Capitas', NULL, 36, 2, 'Escolta/Alero', FALSE, 1),
+('Carlos', 'Carreño Jiménez', NULL, 38, 13, 'Base', FALSE, 1),
 ('Gabriel del Amor', 'León Jiménez', NULL, 20, 12, 'Base', FALSE, 1),
 ('Antonio', 'Rubio Reyes', NULL, 0, 18, 'Pivot', FALSE, 1),
 ('Pablo', 'Bonilla Cepero', NULL, 18, 14, 'Escolta/Alero', FALSE, 1),

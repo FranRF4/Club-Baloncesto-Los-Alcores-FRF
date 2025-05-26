@@ -12,6 +12,18 @@
       <ion-title size="large">Equipo</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-content *ngIf="equipoSeleccionado">
+    <p><img src="{{ equipoSeleccionado.escudo }}" alt=""></p>
+    <p><strong>Nombre:</strong> {{ equipoSeleccionado.nombre }}</p>
+    <p><strong>Categoria:</strong> {{ equipoSeleccionado.categoria }}</p>
+    <p><strong>Nombre del Campo:</strong> {{ equipoSeleccionado.nombre_campo }}</p>
+    <p><strong>Ubicación del Campo:</strong> {{ equipoSeleccionado.ubiCampo }}</p>
+    <p><strong>Color Equipación Local:</strong> {{ equipoSeleccionado.colorLocal }}</p>
+    <p><strong>Color Equipación Visitante:</strong> {{ equipoSeleccionado.colorVisit }}</p>
 
-  <app-explore-container name="Equipo page"></app-explore-container>
-</ion-content>
+    <ion-button *ngIf="equipoSeleccionado.id === 1" color="secondary" href="../../tabs/jugador">
+      Ver Jugadores
+    </ion-button>
+
+
+  </ion-content>

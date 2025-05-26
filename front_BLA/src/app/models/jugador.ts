@@ -6,13 +6,13 @@ export class Jugador {
     private _apellidos: string;
     private _imagen: string;
     private _edad: number;
-    private _numero: number;
+    private _numero: number | null;
     private _posicion: string;
     private _esEntrenador: boolean;
     private _equipo: Equipo;
 
     constructor(id: number, nombre: string, apellidos: string, imagen: string, edad: number, 
-        numero: number, posicion: string, esEntrenador: boolean, equipo: Equipo) {
+        numero: number | null, posicion: string, esEntrenador: boolean, equipo: Equipo) {
         this._id = id;
         this._nombre = nombre;
         this._apellidos = apellidos;
@@ -64,11 +64,13 @@ export class Jugador {
         this._edad = value;
     }
 
-    public get numero(): number {
+    public get numero(): number | null {
         return this._numero;
     }
 
-    public set numero(value: number) {
+    public set numero(value: number | null) {
+        if (this._esEntrenador) {
+            this._numero = null;}
         this._numero = value;
     }
 

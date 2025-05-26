@@ -9,9 +9,32 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Jugador</ion-title>
+      <ion-title size="large">Jugadores</ion-title>
     </ion-toolbar>
   </ion-header>
+  
+  <div *ngIf="!jugadorSeleccionado">
+    <h2>Jugadores</h2>
+    <div *ngFor="let jugador of jugadorLista">
+      <ion-button (click)="jugadorId(jugador.id)">
+        <img [src]="jugador.imagen" width="40" alt="Foto jugador">
+        <strong>Nombre:</strong> {{ jugador.nombre }}<br>
+        <strong>Apellidos:</strong> {{ jugador.apellidos }}<br>
+      </ion-button>
+    </div>
+  </div>
 
-  <app-explore-container name="Jugador page"></app-explore-container>
+  <div *ngIf="jugadorSeleccionado">
+    <h2>{{ jugadorSeleccionado.nombre }} {{ jugadorSeleccionado.apellidos }}</h2>
+    <img [src]="jugadorSeleccionado.imagen" width="100" alt="Foto jugador">
+    <p><strong>Edad:</strong> {{ jugadorSeleccionado.edad }}</p>
+    <p><strong>Posición:</strong> {{ jugadorSeleccionado.posicion }}</p>
+    <p *ngIf="jugadorSeleccionado.numero !== null">
+      <strong>Número:</strong> {{ jugadorSeleccionado.numero }}
+    </p>
+
+
+    <ion-button color="primary" (click)="volverALista()">Volver a la lista</ion-button>
+  </div>
+
 </ion-content>

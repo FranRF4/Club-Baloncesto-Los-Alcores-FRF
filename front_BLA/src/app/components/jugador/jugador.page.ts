@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Jugador } from 'src/app/models/jugador';
+import { JugadorService } from 'src/app/services/jugador.service';
 
 @Component({
   selector: 'app-jugador',
@@ -8,6 +11,32 @@ import { Component } from '@angular/core';
 })
 export class JugadorPage {
 
-  constructor() {}
+  jugadorLista: Jugador[] = [];
+
+  public jugadorSeleccionado: Jugador | null = null;
+
+  constructor(private jugadorService: JugadorService, private router: Router) {}
+
+  ngOnInit() {
+    this.todosJugadores()
+  }
+
+  private todosJugadores(): void {
+    this.jugadorService.jugadores().subscribe((data) => {
+      this.jugadorLista = data;
+      console.log(this.jugadorLista);
+    });
+}
+
+  public jugadorId(id: number): void {
+  this.jugadorService.jugadorPorId(id).subscribe((data) => {
+    this.jugadorSeleccionado = data;
+  });
+}
+
+  public volverALista(): void {
+    this.jugadorSeleccionado = null;
+}
+
 
 }

@@ -11,7 +11,14 @@
     <ion-toolbar>
       <ion-title size="large">Equipo</ion-title>
     </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Equipo page"></app-explore-container>
+  </ion-header> 
+    <h2>Partidos</h2>
+    <div *ngFor="let partido of partidoLista">
+      <ion-button [routerLink]="['/tabs/partidos/partido', partido.id]">
+        <strong>Jornada:</strong> {{ partido.jornada.id}}<br>
+        <strong>Local:</strong> {{ partido.equip_local.nombre}}<br>
+        <strong>Visitante:</strong> {{ partido.equip_visit.nombre }}<br>
+        <strong>Fecha:</strong> {{ partido.fecha }}<br>
+      </ion-button>
+    </div>
 </ion-content>

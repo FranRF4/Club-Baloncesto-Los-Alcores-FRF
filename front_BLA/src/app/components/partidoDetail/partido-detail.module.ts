@@ -2,21 +2,19 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { EquipoPage } from './equipo.page';
+import { PartidoDetailPage } from './partido-detail.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { EquipoPageRoutingModule } from './equipo-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { PartidoDetailPageRoutingModule } from './partido-Detail-routing.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    HttpClientModule,
     ExploreContainerComponentModule,
-    EquipoPageRoutingModule
+    PartidoDetailPageRoutingModule
   ],
-  declarations: [EquipoPage]
+  declarations: [PartidoDetailPage]
 })
-export class EquipoPageModule {}
+export class PartidoDetailPageModule {}

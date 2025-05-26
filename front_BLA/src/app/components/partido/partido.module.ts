@@ -17,4 +17,4 @@ import { PartidoPageRoutingModule } from './partido-routing.module';
   ],
   declarations: [PartidoPage]
 })
-export class EquipoPageModule {}
+export class PartidoPageModule {}
