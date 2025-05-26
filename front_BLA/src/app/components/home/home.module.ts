@@ -2,19 +2,21 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { UsuarioPage } from './usuario.page';
+import { HomePage } from './home.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { UsuarioPageRoutingModule } from './usuario-routing.module';
+import { HomePageRoutingModule } from './home-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
+    HttpClientModule,
     ExploreContainerComponentModule,
-    UsuarioPageRoutingModule
+    HomePageRoutingModule
   ],
-  declarations: [UsuarioPage]
+  declarations: [HomePage]
 })
-export class UsuarioPageModule {}
+export class HomePageModule {}

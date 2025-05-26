@@ -8,6 +8,9 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
+        path: 'home',
+        loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
+      },{
         path: 'equipo/:id',
         loadChildren: () => import('../equipo/equipo.module').then(m => m.EquipoPageModule)
       },
@@ -32,15 +35,19 @@ const routes: Routes = [
         loadChildren: () => import('../partidoDetail/partido-detail.module').then(m => m.PartidoDetailPageModule)
       },
       {
+        path: 'usuario',
+        loadChildren: () => import('../usuario/usuario.module').then(m => m.UsuarioPageModule)
+      },
+      {
         path: '',
-        redirectTo: '/tabs/equipo/1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/equipo/1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];

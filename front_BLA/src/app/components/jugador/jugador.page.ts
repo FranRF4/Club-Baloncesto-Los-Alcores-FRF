@@ -38,5 +38,10 @@ export class JugadorPage {
     this.jugadorSeleccionado = null;
 }
 
-
+public volverAtras(): void {
+    window.history.back();
+  } 
 }
+
+
+

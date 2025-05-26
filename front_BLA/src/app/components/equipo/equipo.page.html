@@ -17,7 +17,7 @@
     <p><strong>Nombre:</strong> {{ equipoSeleccionado.nombre }}</p>
     <p><strong>Categoria:</strong> {{ equipoSeleccionado.categoria }}</p>
     <p><strong>Nombre del Campo:</strong> {{ equipoSeleccionado.nombre_campo }}</p>
-    <p><strong>Ubicación del Campo:</strong> {{ equipoSeleccionado.ubiCampo }}</p>
+    <p><strong>Ubicación del Campo:</strong> {{ equipoSeleccionado.ubi_campo }}</p>
     <p><strong>Color Equipación Local:</strong> {{ equipoSeleccionado.colorLocal }}</p>
     <p><strong>Color Equipación Visitante:</strong> {{ equipoSeleccionado.colorVisit }}</p>
 
@@ -25,5 +25,6 @@
       Ver Jugadores
     </ion-button>
 
+    <ion-button color="primary" (click)="volverALista()" >Volver</ion-button>
 
   </ion-content>

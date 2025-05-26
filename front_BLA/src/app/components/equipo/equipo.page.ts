@@ -28,8 +28,10 @@ export class EquipoPage implements OnInit {
     this.equipoService.equipoPorId(id).subscribe((data) => {
       this.equipoSeleccionado = data;
     });
-
-
 }
+
+public volverALista(): void {
+    window.history.back();
+  } 
 }
 

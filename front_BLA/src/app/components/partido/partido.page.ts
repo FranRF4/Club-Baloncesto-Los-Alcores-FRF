@@ -53,4 +53,6 @@ volverAJornadas() {
     this.partidoSeleccionado = null;
 }
 
+
+
 }

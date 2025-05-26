@@ -60,11 +60,11 @@ export class Equipo {
         this._nombre_campo = value;
     }
 
-    public get ubi_Campo(): string {
+    public get ubi_campo(): string {
         return this._ubi_campo;
     }
 
-    public set ubiCampo(value: string) {
+    public set ubi_campo(value: string) {
         this._ubi_campo = value;
     }
 
