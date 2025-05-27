@@ -94,21 +94,21 @@ INSERT INTO partido (id_equip_local, id_equip_visit, fecha, hora, puntos_local, 
 (4, 1, '2025-05-25', '13:30:00', 65, 57, 4, 24);
 
 INSERT INTO jugador (nombre, apellidos, imagen, edad, numero, posicion, es_entrenador, id_equipo) VALUES
-('Antonio', 'Morillo Lopez', NULL, 0, 10, 'Pivot/Ala-Pivot', FALSE, 1),
-('Jose Alberto', 'Navarro Capitas', NULL, 36, 2, 'Escolta/Alero', FALSE, 1),
-('Carlos', 'Carreño Jiménez', NULL, 38, 13, 'Base', FALSE, 1),
-('Gabriel del Amor', 'León Jiménez', NULL, 20, 12, 'Base', FALSE, 1),
-('Antonio', 'Rubio Reyes', NULL, 0, 18, 'Pivot', FALSE, 1),
-('Pablo', 'Bonilla Cepero', NULL, 18, 14, 'Escolta/Alero', FALSE, 1),
-('Antonio', 'Vargas Aranda', NULL, 30, 21, 'Pivot/Ala-Pivot', FALSE, 1),
-('Oscar', 'Falcon Marquez', NULL, 0, 7, 'Escolta/Alero', FALSE, 1),
-('Jose Antonio', 'Atienza Costazar', NULL, 0, 3, 'Base', FALSE, 1),
-('Carlos', 'Atienza Costazar', NULL, 0, 15, 'Alero/Ala-Pivot', FALSE, 1),
-('Francisco', 'Ruiz Florido', NULL, 20, 8, 'Alero/Ala-Pivot', FALSE, 1),
-('Jesús', 'Poyatos Herrera', NULL, 31, 17, 'Alero', FALSE, 1),
-('Adrian', 'Blanque Muñoz', NULL, 28, 6, 'Base', FALSE, 1),
-('José María', 'Mena Bernal Salguero', NULL, NULL, NULL, 'Entrenador', TRUE, 1),
-('Jose Manuel', 'Romero Huertas', NULL, 30, 9, 'Escolta', FALSE, 1),
-('Pedro Nolasco', 'Ruiz Gomez', NULL, 20, 5, 'Ala-Pivot', FALSE, 1);
+('Antonio', 'Morillo Lopez', "https://i.ibb.co/h1mJ6wND/morillo.jpg", 0, 10, 'Pivot/Ala-Pivot', FALSE, 1),
+('Jose Alberto', 'Navarro Capitas', "https://i.ibb.co/BKQkck00/alberto.jpg", 36, 2, 'Escolta/Alero', FALSE, 1),
+('Carlos', 'Carreño Jiménez', "https://i.ibb.co/N6d4YbQK/carlos.jpg", 38, 13, 'Base', FALSE, 1),
+('Gabriel del Amor', 'León Jiménez', "https://i.ibb.co/hR3MGr3c/gabri.jpg", 20, 12, 'Base', FALSE, 1),
+('Antonio', 'Rubio Reyes', "https://i.ibb.co/fd7HtB0d/rubio.jpg", 0, 18, 'Pivot', FALSE, 1),
+('Pablo', 'Bonilla Cepero', "https://i.ibb.co/7JmLVvtP/pablo.jpg", 18, 14, 'Escolta/Alero', FALSE, 1),
+('Antonio', 'Vargas Aranda', "https://i.ibb.co/95hnpBj/vargas.jpg", 30, 21, 'Pivot/Ala-Pivot', FALSE, 1),
+('Oscar', 'Falcon Marquez', "https://i.ibb.co/qMFckc8v/ojca.jpg", 0, 7, 'Escolta/Alero', FALSE, 1),
+('Jose Antonio', 'Atienza Costazar', "https://i.ibb.co/d0cmgsd7/josan.jpg", 0, 3, 'Base', FALSE, 1),
+('Carlos', 'Atienza Costazar', "https://i.ibb.co/PzmBgwVX/charly.jpg", 0, 15, 'Alero/Ala-Pivot', FALSE, 1),
+('Francisco', 'Ruiz Florido', "https://i.ibb.co/PGB4Vzs7/fran.jpg", 20, 8, 'Alero/Ala-Pivot', FALSE, 1),
+('Jesús', 'Poyatos Herrera', "https://i.ibb.co/FbWKH188/poyi.jpg", 31, 17, 'Alero', FALSE, 1),
+('Adrian', 'Blanque Muñoz', "https://i.ibb.co/VYtZFdgP/adri.jpg", 28, 6, 'Base', FALSE, 1),
+('José María', 'Mena Bernal Salguero', "https://i.ibb.co/RpPhZZsw/mena.jpg", NULL, NULL, 'Entrenador', TRUE, 1),
+('Jose Manuel', 'Romero Huertas', "https://i.ibb.co/MxqSTMVk/rome.jpg", 30, 9, 'Escolta', FALSE, 1),
+('Pedro Nolasco', 'Ruiz Gomez', "https://i.ibb.co/vxXSbDNx/pedro.jpg", 20, 5, 'Ala-Pivot', FALSE, 1);
 
 
