@@ -15,17 +15,8 @@ ion-card:hover {
   transform: scale(1.02);
 }
 
-ion-card-title {
-  font-size: 1.3rem;
-  color: #222;
-}
-
-ion-card-subtitle {
-  color: #666;
-}
-
-ion-card-content p {
+ion-card-content p strong {
   margin: 6px 0;
-  font-size: 1rem;
-  color: #444;
+  font-size: 1.1rem;
+  color: #FFA500;
 }

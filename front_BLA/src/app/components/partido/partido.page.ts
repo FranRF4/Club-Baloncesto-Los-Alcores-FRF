@@ -53,4 +53,7 @@ volverAJornadas() {
     this.partidoSeleccionado = null;
 }
 
+public volverAtras(): void {
+    window.history.back();
+  }
 }

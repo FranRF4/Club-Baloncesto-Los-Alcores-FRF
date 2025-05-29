@@ -32,7 +32,7 @@ export class EquipoPage implements OnInit {
 
 public volverALista(): void {
     window.history.back();
-  }
+  } 
   
   translateColor(colorEs: string): string {
   const mapColores: Record<string, string> = {

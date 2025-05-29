@@ -6,14 +6,12 @@
 
 <ion-content [fullscreen]="true" class="ion-padding">
 
-  <h2 class="titulo">Lista de Temporadas</h2>
+  <h2 class="titulo">Temporadas</h2>
 
-  <ion-list lines="none">
     <ion-card *ngFor="let temporada of temporadaLista" routerLink="/tabs/jornadas" color="primary">
       <ion-card-content>
         <h3><strong>Año:</strong> {{ temporada.anio }}</h3>
         <p><strong>Categoría:</strong> {{ temporada.categoria }}</p>
       </ion-card-content>
     </ion-card>
-  </ion-list>
 </ion-content>
