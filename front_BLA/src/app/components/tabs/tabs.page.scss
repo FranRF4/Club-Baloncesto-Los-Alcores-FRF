@@ -1,1 +1,5 @@
-
+.custom-tab-bar {
+  --color: #d0e6f9;              // color de los íconos/textos inactivos
+  --color-selected: #ffffff;     // color de íconos/textos activos
+  border-top: 1px solid #005693; // opcional, para un borde sutil
+}

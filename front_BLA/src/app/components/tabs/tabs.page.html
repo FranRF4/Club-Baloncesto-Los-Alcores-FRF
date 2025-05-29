@@ -1,25 +1,28 @@
 <ion-tabs>
+  <ion-tab-bar slot="bottom" color="primary">
+    <ion-tab-button tab="home" href="/tabs/home">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
 
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="equipo" href="/tabs/equipo/1">
-      <ion-icon aria-hidden="true" name="triangle"></ion-icon>
+    <ion-tab-button tab="equipo" (click)="goToEquipo()">
+      <ion-icon name="people-outline"></ion-icon>
       <ion-label>Equipo</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="temporada" href="/tabs/temporada">
-      <ion-icon aria-hidden="true" name="ellipse"></ion-icon>
+      <ion-icon name="calendar-outline"></ion-icon>
       <ion-label>Temporadas</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="jornadas" href="/tabs/jornadas">
-      <ion-icon aria-hidden="true" name="ellipse"></ion-icon>
+      <ion-icon name="list-outline"></ion-icon>
       <ion-label>Jornadas</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="jugador" href="/tabs/jugador">
-      <ion-icon aria-hidden="true" name="square"></ion-icon>
+      <ion-icon name="person-outline"></ion-icon>
       <ion-label>Jugadores</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
-
 </ion-tabs>

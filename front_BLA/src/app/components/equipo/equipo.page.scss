@@ -1,0 +1,79 @@
+.equipo-card {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #0067b1;
+}
+
+.escudo-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;                     
+  border: 4px solid var(--ion-color-secondary); 
+  overflow: hidden;                       
+  margin: 16px auto;                       
+  background: white;                    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.escudo-container ion-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                       
+  display: block;
+}
+
+
+ion-img {
+  max-height: 180px;
+  object-fit: contain;
+  margin: 16px auto;
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid var(--ion-color-primary);
+  background: white;
+}
+
+.color-box {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  margin-right: 8px;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+}
+
+.botones-equipo ion-button {
+  margin-top: 12px;
+}
+
+.equipo-card ion-card-content {
+  background-color: #0067b1;           
+  padding: 16px;                 
+  box-sizing: border-box;        
+}
+
+.equipo-card ion-list {
+  background-color: #ffff;           
+  padding: 16px;                 
+  border-radius: 10px;      
+  border: 1px solid #ccc;
+}
+
+
+.equipo-card ion-label {         
+  padding: 16px;                                          
+}
+ 
+.equipo-card ion-label h3{
+  color: #0067b1;
+  text-decoration: underline;                     
+}
+
+.equipo-card ion-label p{
+  color: #000;                     
+}
+

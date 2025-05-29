@@ -35,5 +35,22 @@ export class PartidoDetailPage implements OnInit {
   public volverALista(): void {
     window.history.back();
   } 
+
+  formatHora(hora: string | number[] | any): string {
+  if (typeof hora === 'string') {
+    const partes = hora.split(',');
+    const horas = partes[0].padStart(2, '0');
+    const minutos = partes[1]?.padStart(2, '0') ?? '00';
+    return `${horas}:${minutos}`;
+  } else if (Array.isArray(hora)) {
+    const horas = String(hora[0]).padStart(2, '0');
+    const minutos = String(hora[1]).padStart(2, '0');
+    return `${horas}:${minutos}`;
+  } else {
+    return '';
+  }
+}
+
+
 } 
 

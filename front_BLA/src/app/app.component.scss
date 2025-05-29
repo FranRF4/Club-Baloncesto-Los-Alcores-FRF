@@ -1,0 +1,14 @@
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  a {
+    color: white;
+    font-size: 18px;
+  }
+
+  ion-button {
+    margin-left: 8px;
+  }
+}

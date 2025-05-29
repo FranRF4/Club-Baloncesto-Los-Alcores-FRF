@@ -1,41 +1,53 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
       Jugador
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Jugadores</ion-title>
     </ion-toolbar>
   </ion-header>
-  
+
+  <!-- Lista de jugadores -->
   <div *ngIf="!jugadorSeleccionado">
-    <h2>Jugadores</h2>
-    <div *ngFor="let jugador of jugadorLista">
-      <ion-button (click)="jugadorId(jugador.id)">
-        <img [src]="jugador.imagen" width="40" alt="Foto jugador">
-        <strong>Nombre:</strong> {{ jugador.nombre }}<br>
-        <strong>Apellidos:</strong> {{ jugador.apellidos }}<br>
-      </ion-button>
-    </div>
-    <ion-button color="primary" (click)="volverAtras()" >Volver</ion-button>
+    <h2 class="titulo">Plantilla</h2>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md="6" *ngFor="let jugador of jugadorLista">
+          <ion-card button (click)="jugadorId(jugador.id)" color="primary">
+            <ion-card-content class="jugador-card">
+              <img [src]="jugador.imagen" class="jugador-img" alt="Foto jugador">
+              <p class="entrenador" *ngIf="jugador.posicion === 'Entrenador'">
+                <strong> {{ jugador.posicion }} </strong>
+              </p>
+              <div class="jugador-info">
+                <p><strong>Nombre:</strong> {{ jugador.nombre }}</p>
+                <p><strong>Apellidos:</strong> {{ jugador.apellidos }}</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-button color="secondary" expand="block" (click)="volverAtras()">Volver</ion-button>
   </div>
 
-  <div *ngIf="jugadorSeleccionado">
+  <!-- Detalle del jugador -->
+  <div *ngIf="jugadorSeleccionado" class="jugador-detalle">
     <h2>{{ jugadorSeleccionado.nombre }} {{ jugadorSeleccionado.apellidos }}</h2>
-    <img [src]="jugadorSeleccionado.imagen" width="100" alt="Foto jugador">
+    <img [src]="jugadorSeleccionado.imagen" class="jugador-detalle-img" alt="Foto jugador">
     <p><strong>Edad:</strong> {{ jugadorSeleccionado.edad }}</p>
     <p><strong>Posición:</strong> {{ jugadorSeleccionado.posicion }}</p>
     <p *ngIf="jugadorSeleccionado.numero !== null">
       <strong>Número:</strong> {{ jugadorSeleccionado.numero }}
     </p>
 
-
-    <ion-button color="primary" (click)="volverALista()">Volver a la lista</ion-button>
+    <ion-button color="secondary" expand="block" (click)="volverALista() ">Volver a la lista</ion-button>
   </div>
-
 </ion-content>

@@ -8,11 +8,11 @@ export class Jugador {
     private _edad: number;
     private _numero: number | null;
     private _posicion: string;
-    private _esEntrenador: boolean;
+    private _es_entrenador: boolean;
     private _equipo: Equipo;
 
     constructor(id: number, nombre: string, apellidos: string, imagen: string, edad: number, 
-        numero: number | null, posicion: string, esEntrenador: boolean, equipo: Equipo) {
+        numero: number | null, posicion: string, es_entrenador: boolean, equipo: Equipo) {
         this._id = id;
         this._nombre = nombre;
         this._apellidos = apellidos;
@@ -20,7 +20,7 @@ export class Jugador {
         this._edad = edad;
         this._numero = numero;
         this._posicion = posicion;
-        this._esEntrenador = esEntrenador;
+        this._es_entrenador = es_entrenador;
         this._equipo = equipo;
     }
 
@@ -69,7 +69,7 @@ export class Jugador {
     }
 
     public set numero(value: number | null) {
-        if (this._esEntrenador) {
+        if (this._es_entrenador) {
             this._numero = null;}
         this._numero = value;
     }
@@ -82,12 +82,12 @@ export class Jugador {
         this._posicion = value;
     }
 
-    public get esEntrenador(): boolean {
-        return this._esEntrenador;
+    public get es_entrenador(): boolean {
+        return this._es_entrenador;
     }
 
-    public set esEntrenador(value: boolean) {
-        this._esEntrenador = value;
+    public set es_entrenador(value: boolean) {
+        this._es_entrenador = value;
     }
 
     public get equipo(): Equipo {

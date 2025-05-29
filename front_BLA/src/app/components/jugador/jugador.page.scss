@@ -1,0 +1,57 @@
+ion-content {
+  --background: #ffffff;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #0067b1;
+  margin: 20px 0;
+}
+
+.jugador-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.jugador-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.entrenador{
+  align-items: center;
+  color: yellow;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+.jugador-info p {
+  margin: 4px 0;
+  font-size: 1rem;
+  color: #ffff;
+}
+.jugador-info strong {
+  margin: 4px 0;
+  font-size: 1rem;
+  color: #FFA500;
+}
+
+.jugador-detalle {
+  text-align: center;
+  color: #1c1c1c;
+}
+
+.jugador-detalle-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 12px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}

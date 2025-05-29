@@ -1,30 +1,66 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
       Equipo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Equipo</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content *ngIf="equipoSeleccionado">
-    <p><img src="{{ equipoSeleccionado.escudo }}" alt=""></p>
-    <p><strong>Nombre:</strong> {{ equipoSeleccionado.nombre }}</p>
-    <p><strong>Categoria:</strong> {{ equipoSeleccionado.categoria }}</p>
-    <p><strong>Nombre del Campo:</strong> {{ equipoSeleccionado.nombre_campo }}</p>
-    <p><strong>Ubicación del Campo:</strong> {{ equipoSeleccionado.ubi_campo }}</p>
-    <p><strong>Color Equipación Local:</strong> {{ equipoSeleccionado.colorLocal }}</p>
-    <p><strong>Color Equipación Visitante:</strong> {{ equipoSeleccionado.colorVisit }}</p>
+<ion-content [fullscreen]="true" class="ion-padding">
 
-    <ion-button *ngIf="equipoSeleccionado.id === 1" color="secondary" href="../../tabs/jugador">
-      Ver Jugadores
-    </ion-button>
 
-    <ion-button color="primary" (click)="volverALista()" >Volver</ion-button>
+  <ion-card *ngIf="equipoSeleccionado" class="equipo-card" color="primary">
+    <div class="escudo-container">
+      <ion-img [src]="equipoSeleccionado.escudo" alt="Escudo del equipo"></ion-img>
+    </div>
 
-  </ion-content>
+    <ion-card-header>
+      <ion-card-title>{{ equipoSeleccionado.nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ equipoSeleccionado.categoria }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-label>
+          <h3>Nombre del Campo</h3>
+          <p>{{ equipoSeleccionado.nombre_campo }}</p>
+        </ion-label>
+
+
+        <ion-label>
+          <h3>Ubicación del Campo</h3>
+          <p>{{ equipoSeleccionado.ubi_campo }}</p>
+        </ion-label>
+
+
+        <ion-label>
+          <h3>Color Equipación Local</h3>
+          <p>
+            <span class="color-box" [style.background]="translateColor(equipoSeleccionado.colorLocal)"></span>
+            {{ equipoSeleccionado.colorLocal }}
+
+          </p>
+        </ion-label>
+
+
+        <ion-label>
+          <h3>Color Equipación Visitante</h3>
+          <p>
+            <span class="color-box" [style.background]="translateColor(equipoSeleccionado.colorVisit)"></span>
+            {{ equipoSeleccionado.colorVisit }}
+          </p>
+        </ion-label>
+      </ion-list>
+    </ion-card-content>
+
+    <div class="botones-equipo">
+      <ion-button *ngIf="equipoSeleccionado.id === 1" expand="block" color="secondary" routerLink="/tabs/jugador">
+        Ver Jugadores
+      </ion-button>
+      <ion-button expand="block" color="secondary" (click)="volverALista()">
+        Volver
+      </ion-button>
+    </div>
+  </ion-card>
+
+</ion-content>

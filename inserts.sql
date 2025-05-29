@@ -105,10 +105,10 @@ INSERT INTO jugador (nombre, apellidos, imagen, edad, numero, posicion, es_entre
 ('Jose Antonio', 'Atienza Costazar', "https://i.ibb.co/d0cmgsd7/josan.jpg", 0, 3, 'Base', FALSE, 1),
 ('Carlos', 'Atienza Costazar', "https://i.ibb.co/PzmBgwVX/charly.jpg", 0, 15, 'Alero/Ala-Pivot', FALSE, 1),
 ('Francisco', 'Ruiz Florido', "https://i.ibb.co/PGB4Vzs7/fran.jpg", 20, 8, 'Alero/Ala-Pivot', FALSE, 1),
-('Jesús', 'Poyatos Herrera', "https://i.ibb.co/FbWKH188/poyi.jpg", 31, 17, 'Alero', FALSE, 1),
+('Jesús', 'Poyatos Herrera', "https://i.ibb.co/yFscRFxd/poyi.jpg", 31, 17, 'Alero', FALSE, 1),
 ('Adrian', 'Blanque Muñoz', "https://i.ibb.co/VYtZFdgP/adri.jpg", 28, 6, 'Base', FALSE, 1),
 ('José María', 'Mena Bernal Salguero', "https://i.ibb.co/RpPhZZsw/mena.jpg", NULL, NULL, 'Entrenador', TRUE, 1),
 ('Jose Manuel', 'Romero Huertas', "https://i.ibb.co/MxqSTMVk/rome.jpg", 30, 9, 'Escolta', FALSE, 1),
-('Pedro Nolasco', 'Ruiz Gomez', "https://i.ibb.co/vxXSbDNx/pedro.jpg", 20, 5, 'Ala-Pivot', FALSE, 1);
+('Pedro Nolasco', 'Ruiz Gomez', "https://i.ibb.co/JRHCB147/pedro.jpg", 20, 5, 'Ala-Pivot', FALSE, 1);
 
 

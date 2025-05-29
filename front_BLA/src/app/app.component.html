@@ -1,3 +1,38 @@
 <ion-app>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>
+       <img src="https://i.ibb.co/p6FCyWM9/1-CB-Los-Alcores.jpg" 
+           alt="Escudo CB Los Alcores 2013" 
+           style="height: 50px; border-radius: 50%; border: 2px solid #FFA500; vertical-align: middle;">
+      </ion-title>
+
+    <!-- Botones a la derecha: redes + usuario -->
+    <ion-buttons slot="end" class="header-buttons">
+
+      <!-- Redes sociales -->
+      <a href="https://www.instagram.com/tucuenta" target="_blank" rel="noopener">
+        <ion-icon name="logo-instagram" class="social-icon"></ion-icon>
+      </a>
+      <a href="https://www.tiktok.com/@tucuenta" target="_blank" rel="noopener">
+        <ion-icon name="logo-tiktok" class="social-icon"></ion-icon>
+      </a>
+      <a href="https://www.facebook.com/tucuenta" target="_blank" rel="noopener">
+        <ion-icon name="logo-facebook" class="social-icon"></ion-icon>
+      </a>
+      <a href="https://twitter.com/tucuenta" target="_blank" rel="noopener">
+        <ion-icon name="logo-twitter" class="social-icon"></ion-icon>
+      </a>
+
+      <!-- Botón de usuario -->
+      <ion-button routerLink="/tabs/cuenta">
+        <ion-icon name="person-circle-outline" slot="icon-only" style="font-size: 28px;"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
   <ion-router-outlet></ion-router-outlet>
 </ion-app>

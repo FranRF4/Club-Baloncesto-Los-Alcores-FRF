@@ -32,6 +32,22 @@ export class EquipoPage implements OnInit {
 
 public volverALista(): void {
     window.history.back();
-  } 
+  }
+  
+  translateColor(colorEs: string): string {
+  const mapColores: Record<string, string> = {
+    "rojo": "red",
+    "azul": "blue",
+    "verde": "green",
+    "negro": "black",
+    "blanco": "white",
+    "amarillo": "yellow",
+    "naranja": "orange",
+    "morado": "purple",
+  };
+
+  return mapColores[colorEs.toLowerCase()] || colorEs;
+}
+
 }
 

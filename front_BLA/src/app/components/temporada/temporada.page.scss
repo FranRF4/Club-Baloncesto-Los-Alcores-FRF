@@ -1,0 +1,36 @@
+ion-content {
+  --background: #f2f2f2; // fondo blanco
+}
+
+ion-list{
+    --background: #f2f2f2; // fondo gris
+}
+
+.titulo {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0067b1;
+  margin: 24px 0 16px;
+}
+
+ion-card {
+
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 103, 177, 0.15);
+  transition: transform 0.2s ease;
+  margin-bottom: 16px;
+}
+
+ion-card:hover {
+  transform: scale(1.01);
+}
+
+ion-card-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+ion-card-content p {
+  font-size: 1rem;
+}

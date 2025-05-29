@@ -1,16 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Equipo
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Equipo</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- 🏀 Banner ancho -->
+  <div class="banner-container">
+    <ion-img src="https://i.ibb.co/1fkN3MMg/Imagen-de-Whats-App-2025-05-26-a-las-18-09-39-fe7e551d.jpg"
+      alt="Banner CB Los Alcores"></ion-img>
+  </div>
 
-  </ion-content>
+  <!-- 📝 Descripción de la página -->
+  <div class="page-description">
+    <h2>Bienvenidos a la app oficial del CB Los Alcores 2013</h2>
+    <p>
+      Somos un club de baloncesto comprometido con el deporte, el trabajo en equipo y el desarrollo de nuestros
+      jugadores.
+      En esta app podrás seguirnos en cada paso de la temporada: accede a <a routerLink="/noticias">noticias del
+        club</a>, revisa
+      el <a routerLink="/calendario">calendario de partidos</a>, conoce a fondo la <a routerLink="/plantilla">plantilla
+        oficial</a>,
+      y consulta nuestras <a routerLink="/estadisticas">estadísticas</a> actualizadas.
+    </p>
+    <p>
+      Además, publicamos contenido exclusivo como entrevistas, fotos de partidos, y mucho más.
+      ¡Únete a la comunidad del CB Los Alcores y acompáñanos en cada canasta!
+    </p>
+  </div>
+
+</ion-content>
