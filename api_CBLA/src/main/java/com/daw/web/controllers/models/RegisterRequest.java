@@ -1,6 +1,9 @@
 package com.daw.web.controllers.models;
 
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,5 +21,6 @@ public class RegisterRequest {
 
 	private String password;
 
-	private LocalDateTime createdAt;
+	private LocalDate createdAt;
+
 }

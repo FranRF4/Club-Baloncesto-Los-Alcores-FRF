@@ -1,12 +1,14 @@
 package com.daw.persistence.entities;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,6 +18,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,6 +28,8 @@ import lombok.Setter;
 @Table(name = "Usuario")
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 public class Usuario implements UserDetails{
 
@@ -40,8 +46,9 @@ public class Usuario implements UserDetails{
     @Column(nullable = false, length = 255)
     private String password;
 
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     @Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private LocalDateTime createdAt;
+    private LocalDate createdAt;
     
     @Enumerated(EnumType.ORDINAL)
     private Rol rol;
@@ -52,6 +59,17 @@ public class Usuario implements UserDetails{
 		return List.of(new SimpleGrantedAuthority(rol.name()));
 	}
 	
+	@Override
+	public String getUsername() {
+		return this.email;
+	}
+
+	@Override
+	public String getPassword() {
+		return this.password;
+	}
+
+
 	@Override
 	public boolean isAccountNonExpired() {
 	    return true;

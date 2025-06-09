@@ -19,6 +19,7 @@ export class JugadorPage {
 
   ngOnInit() {
     this.todosJugadores()
+    console.log(localStorage.getItem('jwtToken'));
   }
 
   private todosJugadores(): void {

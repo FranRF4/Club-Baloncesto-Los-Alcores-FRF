@@ -39,6 +39,10 @@ const routes: Routes = [
         loadChildren: () => import('../usuario/usuario.module').then(m => m.UsuarioPageModule)
       },
       {
+        path: 'auth',
+        loadChildren: () => import('../auth/auth.module').then(m => m.AuthPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'

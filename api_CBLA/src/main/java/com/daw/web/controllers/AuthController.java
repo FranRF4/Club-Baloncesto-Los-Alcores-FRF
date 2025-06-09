@@ -15,7 +15,7 @@ import com.daw.web.controllers.models.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("api/auth")
+@RequestMapping("/auth")
 @RequiredArgsConstructor
 public class AuthController {
 	

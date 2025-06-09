@@ -1,7 +1,10 @@
 package com.daw.services;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-import org.springframework.security.core.userdetails.User;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -17,31 +20,35 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class AuthServiceImpl implements AuthService{
+public class AuthServiceImpl implements AuthService {
 
-	private final UsuarioRepository usuarioRepository;	
+	private final UsuarioRepository usuarioRepository;
 	private final PasswordEncoder passwordEncoder;
 	private final JwtService jwtService;
-	
+	private final AuthenticationManager authenticationManager;
+
 	@Override
 	public AuthResponse register(RegisterRequest request) {
-		var usuario = Usuario.builder()
-				.username(request.getUsername())
-				.email(request.getEmail())
+		var usuario = Usuario.builder().username(request.getUsername()).email(request.getEmail())
 				.password(passwordEncoder.encode(request.getPassword()))
-				.rol(Rol.USER)
-				.build();
-		
+				.createdAt(LocalDate.now()).rol(Rol.USER).build();
+
 		usuarioRepository.save(usuario);
-		
+
 		var jwtToken = jwtService.generateToken(usuario);
-		return null;
+
+		return AuthResponse.builder().token(jwtToken).build();
 	}
 
 	@Override
 	public AuthResponse authenticate(AuthenticationRequest request) {
-		// TODO Auto-generated method stub
-		return null;
+		authenticationManager
+				.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
+		var usuario = usuarioRepository.findByEmail(request.getEmail()).orElseThrow();
+		var jwtToken = jwtService.generateToken(usuario);
+		return AuthResponse.builder().token(jwtToken).build();
 	}
+
+	
 
 }

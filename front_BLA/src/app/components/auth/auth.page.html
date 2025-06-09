@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Autenticación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <!-- Registro -->
+  <ion-card color="primary">
+    <ion-card-header>
+      <ion-card-title>Registro</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+        <ion-item>
+          <ion-label position="stacked" color="black">Usuario</ion-label>
+          <ion-input type="text" name="username" [(ngModel)]="registro.username" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" color="black">Email</ion-label>
+          <ion-input type="email" name="email" [(ngModel)]="registro.email" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" color="black">Contraseña</ion-label>
+          <ion-input type="password" name="password" [(ngModel)]="registro.password" required></ion-input>
+        </ion-item>
+
+        <ion-button type="submit" expand="block" color="secondary" [disabled]="registerForm.invalid">
+          Registrarse
+        </ion-button>
+      </form>
+
+      <ion-text color="success" *ngIf="registroResultado">
+        <p class="ion-text-center">{{ registroResultado }}</p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Login -->
+  <ion-card color="primary">
+    <ion-card-header>
+      <ion-card-title>Iniciar Sesión</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+        <ion-item>
+          <ion-label position="stacked" color="black">Email</ion-label>
+          <ion-input type="email" name="email" [(ngModel)]="login.email" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" color="black">Contraseña</ion-label>
+          <ion-input type="password" name="password" [(ngModel)]="login.password" required></ion-input>
+        </ion-item>
+
+        <ion-button type="submit" expand="block" color="secondary" [disabled]="loginForm.invalid">
+          Iniciar sesión
+        </ion-button>
+      </form>
+
+      <ion-text color="danger" *ngIf="loginResultado">
+        <p class="ion-text-center">{{ loginResultado }}</p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

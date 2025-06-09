@@ -68,5 +68,10 @@ public class UsuarioController {
 
 		return ResponseEntity.notFound().build();
 	}
+	
+	@GetMapping("/pruebas")
+	public String aaaaaa() {
+		return "aaaaaaaaaa";
+	}
 		
 }

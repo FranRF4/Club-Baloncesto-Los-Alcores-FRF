@@ -5,10 +5,12 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import { FormsModule } from '@angular/forms';
+import { JwtInterceptor } from './services/jwt.interceptor';
 
 registerLocaleData(localeEs);
 
@@ -18,10 +20,12 @@ registerLocaleData(localeEs);
     BrowserModule,
     IonicModule.forRoot(),
     HttpClientModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: LOCALE_ID, useValue: 'es' }
   ],
   bootstrap: [AppComponent]
