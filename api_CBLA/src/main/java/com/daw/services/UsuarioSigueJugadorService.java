@@ -4,7 +4,7 @@ package com.daw.services;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -76,20 +76,15 @@ public class UsuarioSigueJugadorService{
 
 	@Transactional
     public void seguirJugador(Integer idUsuario, Integer idJugador) {
-        // Validar existencia usuario y jugador
         Usuario usuario = usuarioRepository.findById(idUsuario)
             .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
         Jugador jugador = jugadorRepository.findById(idJugador)
             .orElseThrow(() -> new RuntimeException("Jugador no encontrado"));
-
-        // Verificar si ya sigue al jugador
         boolean yaSigue = usuarioSigueJugadorRepository.findByUsuarioIdAndJugadorId(idUsuario, idJugador).isPresent();
         if (yaSigue) {
             throw new RuntimeException("Ya sigue a este jugador");
         }
-
-        // Crear y guardar la relación
         UsuarioSigueJugador relacion = new UsuarioSigueJugador(usuario, jugador);
         usuarioSigueJugadorRepository.save(relacion);
     }
