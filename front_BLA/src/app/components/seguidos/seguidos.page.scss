@@ -1,0 +1,36 @@
+ion-content {
+  --background: #ffffff;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #0067b1;
+  margin: 20px 0;
+}
+
+.jugador-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.jugador-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.jugador-info p {
+  margin: 4px 0;
+  font-size: 1rem;
+  color: #ffff;
+}
+
+.jugador-info strong {
+  font-size: 1rem;
+  color: #FFA500;
+}

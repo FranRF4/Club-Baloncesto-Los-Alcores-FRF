@@ -7,8 +7,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
- 
-  <!-- Lista de jugadores -->
+
+
   <div *ngIf="!jugadorSeleccionado">
     <h2 class="titulo">Plantilla</h2>
     <ion-grid>
@@ -33,7 +33,6 @@
     <ion-button color="secondary" expand="block" (click)="volverAtras()">Volver</ion-button>
   </div>
 
-  <!-- Detalle del jugador -->
   <div *ngIf="jugadorSeleccionado" class="jugador-detalle">
     <h2>{{ jugadorSeleccionado.nombre }} {{ jugadorSeleccionado.apellidos }}</h2>
     <img [src]="jugadorSeleccionado.imagen" class="jugador-detalle-img" alt="Foto jugador">
@@ -42,6 +41,12 @@
     <p *ngIf="jugadorSeleccionado.numero !== null">
       <strong>Número:</strong> {{ jugadorSeleccionado.numero }}
     </p>
+
+    <div class="centrar">
+    <ion-button *ngIf="!yaSigue" fill="solid" color="primary" (click)="seguirJugador()" class="boton-seguir" aria-label="Seguir jugador">
+  <ion-icon name="person-add-outline"></ion-icon>
+</ion-button>
+</div>
 
     <ion-button color="secondary" expand="block" (click)="volverALista() ">Volver a la lista</ion-button>
   </div>

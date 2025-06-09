@@ -36,6 +36,7 @@ public class JwtService {
 
 		Map<String, Object> extraClaims = new HashMap<>();
 		extraClaims.put("id", usuario.getId());
+		extraClaims.put("username", usuario.getNombre());
 
 		return generateToken(extraClaims, usuario.getEmail());
 	}

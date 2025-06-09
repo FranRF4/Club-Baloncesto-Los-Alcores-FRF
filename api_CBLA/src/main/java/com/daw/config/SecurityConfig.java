@@ -46,10 +46,9 @@ public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws
             new AntPathRequestMatcher("/auth/**"),
             new AntPathRequestMatcher("/equipos/**"),
             new AntPathRequestMatcher("/partidos/**"),
-            new AntPathRequestMatcher("/partidos/partido/"),
             new AntPathRequestMatcher("/jornadas/**"),
             new AntPathRequestMatcher("/temporadas/**"),
-            new AntPathRequestMatcher("/usuarios/**")
+            new AntPathRequestMatcher("/jugadores/**")
         );
     }
 }

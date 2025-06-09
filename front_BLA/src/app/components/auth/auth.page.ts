@@ -27,16 +27,22 @@ export class AuthPage {
   constructor(private authService: AuthService, private router: Router) {}
 
   onRegister() {
-    this.authService.registrar(this.registro).subscribe({
-      next: (res) => {
-        this.registroResultado = 'Registro exitoso.';
-      },
-      error: (err) => {
-        this.registroResultado = 'Error en el registro.';
-        console.error(err);
+  this.authService.registrar(this.registro).subscribe({
+    next: (res: any) => {
+      if (res && res.token) {
+        localStorage.setItem('jwtToken', res.token);  // Guardar token tras registro
+        this.router.navigate(['../../tabs/usuario']);               
+      } else {
+        this.registroResultado = 'Registro exitoso, pero no se recibió token.';
       }
-    });
-  }
+    },
+    error: (err) => {
+      this.registroResultado = 'Error en el registro.';
+      console.error(err);
+    }
+  });
+}
+
 
  onLogin() {
     this.authService.autentificar(this.login).subscribe({
@@ -47,7 +53,11 @@ export class AuthPage {
             if (res && res.token) {
                 localStorage.setItem('jwtToken', res.token);
                 
-                this.router.navigate(['/home']);
+                this.router.navigate(['../../tabs/usuario']);
+                
+                this.router.navigate(['../../tabs/usuario']); 
+                
+                window.location.reload(); // Recargar la página para aplicar el token
             } else {
                 console.error('No se encontró el token en la respuesta del servidor.');
             }

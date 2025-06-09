@@ -23,19 +23,19 @@ public class UsuarioSigueJugador {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "id_usuario", nullable = false)
-    private int idUsuario;
+   @ManyToOne(optional = false)
+    @JoinColumn(name = "id_usuario", referencedColumnName = "id")
+    private Usuario usuario;
 
-    @Column(name = "id_jugador", nullable = false)
-    private int idJugador;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_jugador", referencedColumnName = "id")
+    private Jugador jugador;
 
-    @ManyToOne
-	@JoinColumn(name = "id_usuario", referencedColumnName = "id", insertable = false, updatable = false)
-	private Usuario usuario;
-	
-	@ManyToOne
-	@JoinColumn(name = "id_jugador", referencedColumnName = "id", insertable = false, updatable = false)
-	private Jugador jugador;
+
+    public UsuarioSigueJugador(Usuario usuario, Jugador jugador) {
+        this.usuario = usuario;
+        this.jugador = jugador;
+    }
 }
 
 

@@ -33,7 +33,7 @@ public class UsuarioController {
 		return ResponseEntity.ok(this.usuarioService.findAll());
 	}
 	
-	@GetMapping("/{idusuario}")
+	@GetMapping("/{idUsuario}")
 	public ResponseEntity<Usuario> findById(@PathVariable Integer idUsuario) {
 		Optional<Usuario> usuario = this.usuarioService.findById(idUsuario);
 		if(usuario.isEmpty()) {
@@ -48,7 +48,7 @@ public class UsuarioController {
 		return new ResponseEntity<Usuario>(this.usuarioService.create(usuario), HttpStatus.CREATED);
 	}
 	
-	@PutMapping("/{idusuario}")
+	@PutMapping("/{idUsuario}")
 	public ResponseEntity<Usuario> update(@PathVariable Integer idUsuario, @RequestBody Usuario usuario){
 		if(idUsuario != usuario.getId()) {
 			return ResponseEntity.badRequest().build();
@@ -60,7 +60,7 @@ public class UsuarioController {
 		return ResponseEntity.ok(this.usuarioService.save(usuario));
 	}
 	
-	@DeleteMapping("/{idusuario}")
+	@DeleteMapping("/{idUsuario}")
 	public ResponseEntity<Usuario> delete(@PathVariable Integer idUsuario){
 		if(this.usuarioService.delete(idUsuario)) {
 			return ResponseEntity.ok().build();

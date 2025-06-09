@@ -43,6 +43,10 @@ const routes: Routes = [
         loadChildren: () => import('../auth/auth.module').then(m => m.AuthPageModule)
       },
       {
+        path: 'seguidos',
+        loadChildren: () => import('../seguidos/seguidos.module').then(m => m.SeguidosPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'

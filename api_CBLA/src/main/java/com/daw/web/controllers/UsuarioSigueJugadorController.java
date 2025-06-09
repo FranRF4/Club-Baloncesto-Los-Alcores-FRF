@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,11 +16,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.daw.persistence.entities.Jugador;
 import com.daw.persistence.entities.UsuarioSigueJugador;
 import com.daw.services.UsuarioSigueJugadorService;
 
 
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/usuarioSigueJugadores")
 public class UsuarioSigueJugadorController {
@@ -68,4 +70,14 @@ public class UsuarioSigueJugadorController {
 		return ResponseEntity.notFound().build();
 	}
 		
+	@GetMapping("/{idUsuario}/jugadores")
+	public List<Jugador> getJugadoresQueSigue(@PathVariable Integer idUsuario) {
+        return usuarioSigueJugadorService.obtenerJugadoresQueSigueUsuario(idUsuario);
+    }
+
+	@PostMapping("/{idUsuario}/seguir/{idJugador}")
+    public ResponseEntity<String> seguirJugador( @PathVariable Integer idUsuario, @PathVariable Integer idJugador) {
+        usuarioSigueJugadorService.seguirJugador(idUsuario, idJugador);
+        return ResponseEntity.ok("Jugador seguido correctamente");
+    }
 }

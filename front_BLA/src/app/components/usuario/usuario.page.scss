@@ -1,0 +1,41 @@
+.perfil-content {
+  --background: #f0f4f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;     
+  height: 100%;             
+  padding: 24px 16px;       
+}
+
+.perfil-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  background: white;
+  margin-bottom: 24px;
+}
+
+.perfil-card ion-card-header {
+  background-color: #0067b1;
+  color: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 16px 24px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.perfil-card ion-card-content p {
+  font-size: 1rem;
+  margin: 12px 0;
+  color: #333;
+  text-align: center;
+}
+
+.logout-button {
+  max-width: 400px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+}
