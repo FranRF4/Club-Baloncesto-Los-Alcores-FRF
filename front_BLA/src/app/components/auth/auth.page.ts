@@ -47,17 +47,14 @@ export class AuthPage {
  onLogin() {
     this.authService.autentificar(this.login).subscribe({
         next: (res) => {
-            console.log('Respuesta del servidor:', res); // Para ver la estructura completa
+            console.log('Respuesta del servidor:', res); 
             this.loginResultado = 'Autenticación exitosa.';
 
             if (res && res.token) {
-                localStorage.setItem('jwtToken', res.token);
-                
-                this.router.navigate(['../../tabs/usuario']);
+                localStorage.setItem('jwtToken', res.token);        
                 
                 this.router.navigate(['../../tabs/usuario']); 
                 
-                window.location.reload(); // Recargar la página para aplicar el token
             } else {
                 console.error('No se encontró el token en la respuesta del servidor.');
             }

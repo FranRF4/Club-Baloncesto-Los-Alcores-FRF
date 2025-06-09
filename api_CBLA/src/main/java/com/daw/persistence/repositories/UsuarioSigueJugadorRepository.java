@@ -13,4 +13,8 @@ public interface UsuarioSigueJugadorRepository extends ListCrudRepository<Usuari
 
 	Optional<UsuarioSigueJugador> findByUsuarioIdAndJugadorId(Integer idUsuario, Integer idJugador);
 
+	boolean existsByUsuarioIdAndJugadorId(Integer idUsuario, Integer idJugador);
+
+	void deleteByUsuarioIdAndJugadorId(Integer idUsuario, Integer idJugador);
+
 }

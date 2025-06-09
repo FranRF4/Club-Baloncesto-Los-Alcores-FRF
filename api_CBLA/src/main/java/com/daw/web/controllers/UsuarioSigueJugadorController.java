@@ -80,4 +80,16 @@ public class UsuarioSigueJugadorController {
         usuarioSigueJugadorService.seguirJugador(idUsuario, idJugador);
         return ResponseEntity.ok("Jugador seguido correctamente");
     }
+
+	@GetMapping("/{idUsuario}/sigue/{idJugador}")
+    public ResponseEntity<Boolean> comprobarSiSigue(@PathVariable Integer idUsuario, @PathVariable Integer idJugador) {
+        boolean sigue = usuarioSigueJugadorService.comprobarSiSigue(idUsuario, idJugador);
+        return ResponseEntity.ok(sigue);
+    }
+
+    @DeleteMapping("/{idUsuario}/seguir/{idJugador}")
+    public ResponseEntity<?> dejarDeSeguir(@PathVariable Integer idUsuario, @PathVariable Integer idJugador) {
+        usuarioSigueJugadorService.dejarDeSeguir(idUsuario, idJugador);
+        return ResponseEntity.ok().build();
+    }
 }

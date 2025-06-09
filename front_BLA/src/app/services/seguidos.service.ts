@@ -23,8 +23,8 @@ export class SeguidosService {
         return this.clientHttp.get<boolean>(`${this.url}/${idUsuario}/sigue/${idJugador}`);
     }
 
-    //dejarDeSeguir(idUsuario: number, idJugador: number): Observable<any> {
-    //return this.clientHttp.delete(`${this.url}/${idUsuario}/seguir/${idJugador}`);
-    //}
+    dejarDeSeguir(idUsuario: number, idJugador: number): Observable<any> {
+    return this.clientHttp.delete(`${this.url}/${idUsuario}/seguir/${idJugador}`);
+    }
     
 }

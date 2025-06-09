@@ -5,14 +5,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <h2 class="titulo">Jugadores Seguidos</h2>
+  
 
   <div *ngIf="jugadores.length > 0; else noJugadores">
     <ion-grid>
+      <h2 class="titulo">Jugadores Seguidos</h2>
       <ion-row>
         <ion-col size="12" size-md="6" *ngFor="let jugador of jugadores">
           <ion-card color="primary">
-            <ion-card-content class="jugador-card" >
+            <ion-card-content class="jugador-card">
               <img [src]="jugador.imagen" class="jugador-img" alt="Foto jugador" />
               <div class="jugador-info">
                 <p><strong>Nombre:</strong> {{ jugador.nombre }}</p>
@@ -20,6 +21,23 @@
                 <p><strong>Posición:</strong> {{ jugador.posicion }}</p>
                 <p *ngIf="jugador.numero !== null"><strong>Número:</strong> {{ jugador.numero }}</p>
                 <p *ngIf="jugador.edad !== null"><strong>Edad:</strong> {{ jugador.edad }}</p>
+                <ion-button 
+      *ngIf="yaSigueMap[jugador.id]" 
+      color="danger" 
+      shape="round" 
+      (click)="dejarDeSeguirJugador(jugador.id)">
+      <ion-icon name="person-remove" slot="start"></ion-icon>
+      Dejar de seguir
+    </ion-button>
+
+    <ion-button 
+      *ngIf="!yaSigueMap[jugador.id]" 
+      color="success" 
+      shape="round" 
+      (click)="seguirJugador(jugador.id)">
+      <ion-icon name="person-add" slot="start"></ion-icon>
+      Seguir
+    </ion-button>
               </div>
             </ion-card-content>
           </ion-card>

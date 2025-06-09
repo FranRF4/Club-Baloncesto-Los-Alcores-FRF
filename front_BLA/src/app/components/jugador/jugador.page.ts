@@ -13,43 +13,102 @@ import { SeguidosService } from 'src/app/services/seguidos.service';
 })
 export class JugadorPage {
 
- public jugadorLista: Jugador[] = [];
+  public jugadorLista: Jugador[] = [];
   public jugadorSeleccionado: Jugador | null = null;
-  public yaSigue = false;
   public idUsuario: number | null = null;
+  public yaSigue: boolean = false;  // Aquí guardamos si sigue o no
 
   constructor(
-    private jugadorService: JugadorService, 
-    private seguidosService: SeguidosService, 
+    private jugadorService: JugadorService,
+    private seguidosService: SeguidosService,
     private router: Router
   ) {}
 
   ngOnInit() {
     this.obtenerIdToken();
     this.todosJugadores();
-    console.log(localStorage.getItem('jwtToken'));
   }
 
   private todosJugadores(): void {
     this.jugadorService.jugadores().subscribe((data) => {
       this.jugadorLista = data;
-      console.log(this.jugadorLista);
     });
   }
 
   public jugadorId(id: number): void {
     this.jugadorService.jugadorPorId(id).subscribe((data) => {
       this.jugadorSeleccionado = data;
-
-      // Solo llamar si idUsuario no es null
       if (this.idUsuario !== null) {
-        this.seguidosService
-          .comprobarSiSigue(this.idUsuario, id)
-          .subscribe((res) => (this.yaSigue = res));
-      } else {
-        this.yaSigue = false; // Por si acaso
+        this.comprobarSiSigueJugador(id);
       }
     });
+  }
+
+  private comprobarSiSigueJugador(idJugador: number): void {
+    if (this.idUsuario === null) {
+      this.yaSigue = false;
+      return;
+    }
+    this.seguidosService.comprobarSiSigue(this.idUsuario, idJugador).subscribe({
+      next: (sigue) => {
+        this.yaSigue = sigue;
+      },
+      error: () => {
+        this.yaSigue = false;
+      }
+    });
+  }
+
+  public seguirJugador(): void {
+    if (!this.jugadorSeleccionado || this.idUsuario === null) {
+      alert('Usuario o jugador no válido.');
+      return;
+    }
+
+    this.seguidosService
+      .seguirJugador(this.idUsuario, this.jugadorSeleccionado.id)
+      .subscribe({
+        next: () => {
+          alert('Jugador seguido correctamente');
+          this.yaSigue = true;  // Cambiamos a que ya sigue
+        },
+        error: () => {
+           this.jugadorId(this.jugadorSeleccionado!.id);
+        }
+      });
+  }
+
+  public dejarDeSeguirJugador(): void {
+    if (!this.jugadorSeleccionado || this.idUsuario === null) {
+      alert('Usuario no logeado o jugador inválido.');
+      return;
+    }
+
+    this.seguidosService
+      .dejarDeSeguir(this.idUsuario, this.jugadorSeleccionado.id)
+      .subscribe({
+        next: () => {
+          this.yaSigue = false;  // Cambiamos a que ya no sigue
+        },
+        error: () => {
+          alert('Error al dejar de seguir');
+        }
+      });
+  }
+
+  obtenerIdToken() {
+    const token = localStorage.getItem('jwtToken');
+    if (!token) {
+      this.idUsuario = null;
+      return;
+    }
+    try {
+      const tokenData: any = jwtDecode(token);
+      const id = Number(tokenData.id);
+      this.idUsuario = isNaN(id) ? null : id;
+    } catch {
+      this.idUsuario = null;
+    }
   }
 
   public volverALista(): void {
@@ -59,48 +118,4 @@ export class JugadorPage {
   public volverAtras(): void {
     window.history.back();
   }
-
-  obtenerIdToken() {
-    const token = localStorage.getItem('jwtToken');
-    if (!token) {
-      console.error("Token no encontrado");
-      return;
-    }
-
-    try {
-      const tokenData: any = jwtDecode(token);
-      // Asegurar que es un número válido
-      const id = Number(tokenData.id);
-      this.idUsuario = isNaN(id) ? null : id;
-    } catch (error) {
-      console.error('Error al decodificar el token:', error);
-      this.idUsuario = null;
-    }
-  }
-
-  public seguirJugador(): void {
-    if (!this.jugadorSeleccionado) return;
-    if (this.idUsuario === null) {
-      alert('Usuario no logeado.');
-      return;
-    }
-
-    this.seguidosService
-      .seguirJugador(this.idUsuario, this.jugadorSeleccionado.id)
-      .subscribe({
-        next: () => {
-          this.yaSigue = true;
-          alert('Jugador seguido correctamente');
-        },
-        error: (err) => {
-          console.error(err);
-          alert('Error al seguir al jugador');
-        },
-      });
-      window.location.reload();
-  }
-
 }
-
-
-

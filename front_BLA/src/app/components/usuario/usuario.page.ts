@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['usuario.page.scss'],
   standalone: false,
 })
-export class UsuarioPage implements OnInit {
+export class UsuarioPage {
 
   public usuarioLogeado: Usuario | null = null;
 
@@ -20,7 +20,7 @@ export class UsuarioPage implements OnInit {
 
   constructor(private usuarioService: UsuarioService, private router: Router) { }
 
-  ngOnInit() {
+ ionViewWillEnter(): void  {
      this.obtenerIdToken();
      this.obtenerUserNameToken();
      this.usuarioId(this.id as number);

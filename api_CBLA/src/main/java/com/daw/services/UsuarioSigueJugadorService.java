@@ -88,5 +88,17 @@ public class UsuarioSigueJugadorService{
         UsuarioSigueJugador relacion = new UsuarioSigueJugador(usuario, jugador);
         usuarioSigueJugadorRepository.save(relacion);
     }
+
+	public boolean comprobarSiSigue(Integer idUsuario, Integer idJugador) {
+        return usuarioSigueJugadorRepository.existsByUsuarioIdAndJugadorId(idUsuario, idJugador);
+    }
+
+	@Transactional
+    public void dejarDeSeguir(Integer idUsuario, Integer idJugador) {
+        if (!usuarioSigueJugadorRepository.existsByUsuarioIdAndJugadorId(idUsuario, idJugador)) {
+            throw new RuntimeException("El usuario no sigue a este jugador");
+        }
+        usuarioSigueJugadorRepository.deleteByUsuarioIdAndJugadorId(idUsuario, idJugador);
+    }
 	
 }

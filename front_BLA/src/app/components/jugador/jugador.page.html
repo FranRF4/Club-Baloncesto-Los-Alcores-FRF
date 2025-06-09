@@ -42,12 +42,18 @@
       <strong>Número:</strong> {{ jugadorSeleccionado.numero }}
     </p>
 
-    <div class="centrar">
-    <ion-button *ngIf="!yaSigue" fill="solid" color="primary" (click)="seguirJugador()" class="boton-seguir" aria-label="Seguir jugador">
-  <ion-icon name="person-add-outline"></ion-icon>
-</ion-button>
-</div>
+    <ion-button *ngIf="yaSigue" color="danger" shape="round" (click)="dejarDeSeguirJugador()">
+      <ion-icon name="person-remove" slot="start"></ion-icon>
+      Dejar de seguir
+    </ion-button>
 
-    <ion-button color="secondary" expand="block" (click)="volverALista() ">Volver a la lista</ion-button>
+    <ion-button *ngIf="!yaSigue" color="success" shape="round" (click)="seguirJugador()">
+      <ion-icon name="person-add" slot="start"></ion-icon>
+      Seguir
+    </ion-button>
+
+
+    <ion-button color="secondary" expand="block" (click)="volverALista()">Volver a la lista</ion-button>
   </div>
+
 </ion-content>
