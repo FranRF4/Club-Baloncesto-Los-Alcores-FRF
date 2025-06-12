@@ -50,7 +50,8 @@ public class Usuario implements UserDetails{
     @Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDate createdAt;
     
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
+	@Column(nullable = false, length = 20)
     private Rol rol;
 
 	@Override

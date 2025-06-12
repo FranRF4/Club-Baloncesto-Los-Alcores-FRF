@@ -20,11 +20,11 @@ export class JornadaService {
             return this.clientHttp.get<Jornada>(`${this.url}/${id}`);
         }
 
-        crearJornada(jornada: {semana: number, mes: number, fase: string,temporada: Temporada}): Observable<any> {
+        crearJornada(jornada: {semana: number, mes: number, fase: string,id_temporada: Temporada}): Observable<any> {
             return this.clientHttp.post<Jornada>(`${this.url}`, jornada, {responseType: `text` as `json`});
         }
 
-        actualizarJornada(id: number,jornada: {semana: number, mes: number, fase: string,temporada: Temporada}): Observable<any> {
+        actualizarJornada(id: number,jornada: {semana: number, mes: number, fase: string, id_temporada: Temporada}): Observable<any> {
             return this.clientHttp.put<Jornada>(`${this.url}/${id}`, jornada, {responseType: `text` as `json`});
         }
 

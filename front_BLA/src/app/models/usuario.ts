@@ -1,16 +1,20 @@
+
+export type Rol = 'ADMIN' | 'USER';
 export class Usuario {
     private _id: number;
     private _username: string;
     private _email: string;
     private _password: string;
     private _createdAt: Date;
+    private _rol: Rol = 'USER';
 
-    constructor(id: number, username: string, email: string, password: string, createdAt: Date) {
+    constructor(id: number, username: string, email: string, password: string, createdAt: Date, rol: Rol = 'USER') {
         this._id = id;
         this._username = username;
         this._email = email;
         this._password = password;
         this._createdAt = createdAt;
+        this._rol = rol;
     }
 
     public get id(): number {
@@ -51,5 +55,13 @@ export class Usuario {
 
     public set createdAt(value: Date) {
         this._createdAt = value;
+    }
+
+    public get rol(): Rol {
+        return this._rol;
+    }
+
+    public set rol(value: Rol) {
+        this._rol = value;
     }
 }

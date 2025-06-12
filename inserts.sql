@@ -111,4 +111,5 @@ INSERT INTO jugador (nombre, apellidos, imagen, edad, numero, posicion, es_entre
 ('Jose Manuel', 'Romero Huertas', "https://i.ibb.co/MxqSTMVk/rome.jpg", 30, 9, 'Escolta', FALSE, 1),
 ('Pedro Nolasco', 'Ruiz Gomez', "https://i.ibb.co/JRHCB147/pedro.jpg", 20, 5, 'Ala-Pivot', FALSE, 1);
 
-
+INSERT INTO usuario (username, email, password, rol) VALUE
+('admin', 'admin@gmail.com', '$2a$12$ynGe88Br6Xt2bZ9eMF5teuRtF/ocFUsKXFo1eF9.w.X9Fv7P8PSyq', 'ADMIN');

@@ -5,16 +5,16 @@ export class Jornada {
     private _semana: number;
     private _mes: number;
     private _fase: string;
-    private _temporada: Temporada;
+    private _id_temporada: Temporada;
     
 
 
-    constructor(id: number, semana: number, mes: number, fase: string, temporada: Temporada){
+    constructor(id: number, semana: number, mes: number, fase: string, id_temporada: Temporada){
         this._id = id;
         this._semana = semana;
         this._mes = mes;
         this._fase = fase;
-        this._temporada = temporada;
+        this._id_temporada = id_temporada;
     }
 
     public get id(): number {
@@ -49,11 +49,11 @@ export class Jornada {
         this._fase = value;
     }
 
-    public get temporada(): Temporada {
-        return this._temporada;
+    public get id_temporada(): Temporada {
+        return this._id_temporada;
     }
 
-    public set temporada(value: Temporada) {
-        this._temporada = value;
+    public set id_temporada(value: Temporada) {
+        this._id_temporada = value;
     }
 }

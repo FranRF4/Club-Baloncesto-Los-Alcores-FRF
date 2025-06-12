@@ -9,6 +9,8 @@
 ion-card {
   transition: transform 0.2s ease;
   cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 ion-card:hover {
@@ -19,4 +21,45 @@ ion-card-content p strong {
   margin: 6px 0;
   font-size: 1.1rem;
   color: #FFA500;
+}
+
+/* Estilo para los formularios dentro de ion-card */
+ion-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+ion-item {
+  --background: #f8f9fa;
+  --border-radius: 8px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  color: black;
+}
+
+ion-label {
+  font-weight: bold;
+  color: #333;
+}
+
+ion-input {
+  --padding-start: 10px;
+  --padding-end: 10px;
+  font-size: 1rem;
+}
+
+/* Botones */
+ion-button {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+ion-button[color="danger"] {
+  background-color: #dc3545;
+  color: white;
+}
+
+ion-button:disabled {
+  opacity: 0.5;
 }
