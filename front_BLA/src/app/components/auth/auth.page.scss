@@ -10,12 +10,12 @@ ion-item {
 
 ion-label {
   color: black !important;
-  font-weight: 600;
-  --font-size: 1.1rem !important;
+  font-weight: 600 !important;
+
 }
 
 ion-label .label-text {
-  font-size: 1.1rem !important;
+  font-size: 0.2rem !important;
 }
 
 
@@ -24,6 +24,7 @@ ion-input {
   color: black;
   background: #f9f9f9;
   border-radius: 8px;
+  margin-top: 25px;
   padding: 8px 12px;
   border: 1.2px solid #bbb;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);

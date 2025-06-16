@@ -14,17 +14,17 @@
     <ion-card-content>
       <form (ngSubmit)="onRegister()" #registerForm="ngForm">
         <ion-item>
-          <ion-label position="stacked" color="black">Usuario</ion-label>
+          <ion-label position="floating" color="dark">Usuario</ion-label>
           <ion-input type="text" name="username" [(ngModel)]="registro.username" required></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label position="stacked" color="black">Email</ion-label>
+          <ion-label position="floating" color="dark">Email</ion-label>
           <ion-input type="email" name="email" [(ngModel)]="registro.email" required></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label position="stacked" color="black">Contraseña</ion-label>
+          <ion-label position="floating" color="dark">Contraseña</ion-label>
           <ion-input type="password" name="password" [(ngModel)]="registro.password" required></ion-input>
         </ion-item>
 
@@ -47,12 +47,12 @@
     <ion-card-content>
       <form (ngSubmit)="onLogin()" #loginForm="ngForm">
         <ion-item>
-          <ion-label position="stacked" color="black">Email</ion-label>
+          <ion-label position="floating" color="dark">Email</ion-label>
           <ion-input type="email" name="email" [(ngModel)]="login.email" required></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label position="stacked" color="black">Contraseña</ion-label>
+          <ion-label position="floating" color="dark">Contraseña</ion-label>
           <ion-input type="password" name="password" [(ngModel)]="login.password" required></ion-input>
         </ion-item>
 
